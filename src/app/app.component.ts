@@ -120,7 +120,7 @@ export class AppComponent {
 
 
     changeStep(step) {
-        if(step == "torso" || step == "skintone" || step == "legs") {
+        if(step == "team" || step == "skintone") {
             this.stepLevel = "figure";
         } else if (step == "packaging") {
             this.stepLevel = "packaging";

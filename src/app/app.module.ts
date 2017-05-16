@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 
 import { StepsService } from './steps.service';
 import { FigureComponent } from './figure/figure.component';
+import { FigureFeatureViewComponent } from './figure-feature-view/figure-feature-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FigureComponent
+    FigureComponent,
+    FigureFeatureViewComponent
   ],
   imports: [
     BrowserModule,
