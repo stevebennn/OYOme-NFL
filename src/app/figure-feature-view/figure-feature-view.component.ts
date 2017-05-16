@@ -7,9 +7,8 @@ import { FigureComponent } from '../figure/figure.component';
 })
 export class FigureFeatureViewComponent extends FigureComponent {
 
-  constructor() {
-    super();
-   }
+  // when extending a class you need to include the super call
+  constructor() { super(); }
 
   ngOnInit() {
   }
