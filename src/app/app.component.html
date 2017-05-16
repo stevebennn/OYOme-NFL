@@ -1,0 +1,159 @@
+  
+    <div class="container">
+        <header>
+            <div class="top-bar">
+                <div class="top-bar-wrapper">
+                    <span class="logo"></span>
+                    <span>=</span>
+                </div>
+            </div>
+        </header>
+        <div class="content-wrapper">
+            <!--Player content-->
+            <!--The "app-figure" element is a way to encapsulate the gnarly SVG code. 
+            This way all we have to do is pass it values :)-->
+            <section class="figure">
+                <app-figure
+                    skintone="{{activeSkintone}}"
+                    team="{{ activeTeam }}"
+                    eyes="{{ activeEyes }}"
+                    eyeAccessory="{{ activeEyeAccessory }}"
+                    eyebrows="{{ activeEyebrows }}"
+                    eyebrowColor="{{ activeEyebrowColor }}"
+                    nose="{{ activeNose }}"
+                    hairColor="{{ activeHairColor }}"
+                    jerseyNumber="{{ activeJerseyNumber }}"
+                    noseAccessory="{{ activeNoseAccessory }}"></app-figure>
+            </section>
+
+        </div>
+    
+    
+    <!-- SIDEBAR OPTIONS-->
+    <section>
+        <div class="side-option-bar">
+            
+            <!--EYE ACCESSORY OPTIONS-->
+            <div class="side-option-inner-scroll"
+                [class.hidden]="activeStep !== 'eyes' ">
+                    <button
+                    class="side-bar-item btn"
+                    *ngFor="let acc of eyeAccessoriesOpts"
+                    (click)="changeEyeAccessory(acc)"
+                    [class.active]="activeEyeAccessory == acc "
+                    [ngStyle]="{'background-image': 'url(assets/img/eyes/acc_' + acc + '.svg)' }">
+                    </button>
+            </div>
+
+            <!--EYEBROW ACCESSORY OPTIONS-->
+            <div class="side-option-inner-scroll"
+                [class.hidden]="activeStep !== 'eyebrows' ">
+                    <button
+                    class="side-bar-item btn"
+                    *ngFor="let color of hairColorOpts"
+                    (click)="changeEyebrowColor(color.name)"
+                    [class.active]="activeEyebrowColor == color.hex "
+                    [ngStyle]="{'background': color.hex }"
+                    >
+                    </button>
+            </div>
+
+            <!-- NOSE ACCESSORY OPTIONS -->
+            <div class="side-option-inner-scroll"
+                [class.hidden]="activeStep !== 'noses' ">
+                    <button
+                    class="side-bar-item nose-opts btn"
+                    *ngFor="let opts of noseAccessoryOpts"
+                    (click)="changeNoseAccessory(opts)"
+                    [class.active]="activeNoseAccessory == opts "
+                    [ngStyle]="{'background-image': 'url(assets/img/noses/acc_' + opts + '.svg' }"
+                    >
+                    </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- BOTTOM OPTION BAR -->
+        <section>
+        <div class="bottom-option-bar">
+        <div class="bottom-option-bar-inner">
+            
+            <!--SKINTONE OPTIONS-->
+            <div [class.hidden]="activeStep !== 'skintone' ">
+                <button
+                class="bottom-bar-item color btn"
+                *ngFor="let skintone of skintoneOpts"
+                [ngStyle]="{'background-color': skintone.hex }"
+                (click)="changeSkintone(skintone.name)"
+                [class.active]="activeSkintone == skintone.name "></button>
+            </div>
+
+            <!--TEAM OPTIONS-->
+            <div [class.hidden]="activeStep !== 'team' ">
+                <button
+                class="bottom-bar-item logo btn"
+                *ngFor="let team of teamOpts"
+                (click)="changeTeam(team.name)"
+                [ngStyle]="{'background-image': 'url(assets/img/logos/' + team.name + '.png)' }"
+                [class.active]="activeTeam == team.name"
+                ></button>
+            </div>
+
+            <!--EYE OPTIONS-->
+            <div [class.hidden]="activeStep !== 'eyes' ">
+                <button
+                class="bottom-bar-item eyes btn"
+                *ngFor="let eye of eyesOpts"
+                (click)="changeEyes(eye)"
+                [ngStyle]="{'background-image': 'url(assets/img/eyes/eyes_' + eye + '.svg)' }"
+                [class.active]="activeEyes == eye"></button>              
+            </div>
+
+            <!--EYEBROW OPTIONS-->
+            <div [class.hidden]="activeStep !== 'eyebrows' ">
+                <button
+                class="bottom-bar-item eyebrows btn"
+                *ngFor="let eyebrow of eyebrowOpts"
+                (click)="changeEyebrow(eyebrow)"
+                [ngStyle]="{'background-image': 'url(assets/img/eyebrows/eyebrows_' + eyebrow + '_blk.svg)' }"
+                [class.active]="activeEyebrows == eyebrow"></button>              
+            </div>
+
+            <!--NOSE OPTIONS-->
+            <div [class.hidden]="activeStep !== 'noses' ">
+                <button
+                class="bottom-bar-item nose btn"
+                *ngFor="let nose of noseOpts"
+                (click)="changeNose(nose)"
+                [ngStyle]="{'background-image': 'url(assets/img/noses/nose_' + nose + '.svg)' }"
+                [class.active]="activeNose == nose"></button>
+            </div>
+
+        </div>
+        </div>
+        </section>
+
+    <!-- BOTTOM NAVIGATION BAR -->
+    <section>
+        <div class="bottom-bar">
+            <div
+            class="bottom-bar-inner"
+            [ngStyle]="{'width.px': stepsContainer }">
+                 <button
+                 *ngFor="let step of steps"
+                 class="bottom-bar-step btn"
+                 (click)="changeStep(step.name)"
+                 [class.active]="activeStep == step.name ">
+                    <img src="assets/img/{{step.name}}.svg" alt="">
+                 </button>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+  
+  
+  

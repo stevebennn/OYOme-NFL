@@ -1,0 +1,307 @@
+
+@import "assets/styles/vendor/_normalize.scss";
+
+
+/* You can add global styles to this file, and also import other style files */
+// for debugging purposes!
+.debug-border {
+  border: solid red 1px;
+}
+
+
+
+// Variables
+$white: #FFF;
+$oyo-blue: #192258;
+$oyo-gold: #faa41a;
+$oyo-bg: #3042a8;
+
+$side-option-bar-bg: #A5A5A5;
+$bottom-option-bar-bg: #E5E5E5;
+
+.hidden { display: none !important; }
+
+.side-bar-item.active {
+    border: $oyo-gold solid 2px;
+    transition: border ease-out .2s;
+}
+
+.bottom-bar-step.active { background: $oyo-gold; }
+
+.bottom-bar-item.active {
+    border: $oyo-gold solid 2px;
+    transition: border ease-out .2s;
+ }
+
+ .btn {
+     cursor: pointer;
+     &:focus {
+         outline: none;
+         border: $oyo-gold solid 2px  ;
+     }
+}
+
+// Globals
+body {
+  background: url('assets/img/dot.svg');
+  background-color: $oyo-bg;
+  background-size: 35px;
+  height: 100vh;
+  width: 100%;
+}
+
+
+// this will the the app-root element when
+// in angular...not a class name
+.app-root {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    // max-width: 960px;
+    // max-height: 800px;
+    position: relative;
+}
+
+
+.top-bar {
+    position: absolute;
+    width:100%;
+    background: $oyo-blue;
+    padding: 10px;
+    box-shadow: rgba(0,0,0,.2) 0px 3px 6px;
+    z-index: 10;
+}
+
+
+.top-bar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+.logo {
+    display: inline-block;
+    width: 75px;
+    height: 25px;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/183319/oyome_logo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+
+.app-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.bottom-bar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: $oyo-blue;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+      &-inner {
+        position: absolute;
+        display: flex;
+        // width: 1000px;
+        flex-wrap: wrap;
+      }
+}
+
+
+.bottom-bar-item {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background: white;
+    margin: 5px;
+    border-radius: 5px;
+    border: transparent solid 2px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+    &:focus {
+        outline: none;
+    }
+}
+
+.bottom-bar-item,
+.side-bar-item {
+    background-size: contain ;
+    background-position: center ;
+    background-repeat: no-repeat ;
+}
+
+.bottom-bar-item.nose {
+    background-size: 160px;
+    background-position: center -46px;
+}
+
+.bottom-bar-item.eyebrows {
+    background-size: 142px;
+    background-position: -22px -16px;
+}
+
+.bottom-bar-item.eyes {
+background-size: 200px;
+background-position: -48px -50px;
+}
+
+.bottom-bar-step {
+    width: 55px;
+    height: 60px;
+    transition: background ease-out .2s;
+    border: transparent solid 2px;
+    outline: none;
+}
+.bottom-option-bar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 60px;
+    width: 100%;
+    height: 75px;
+    background: $bottom-option-bar-bg;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+        &-inner {
+        position: absolute;
+        display: flex;
+        width: 1000px;
+        flex-wrap: wrap;
+      }
+}
+
+
+.side-option-bar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 45px;
+    width: 75px;
+    height: calc(100% - 165px);
+    background: $side-option-bar-bg;
+    box-shadow:rgba(0, 0, 0, 0.3) 3px 0px 4px;
+}
+
+
+.side-option-inner-scroll {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+  width: 100%;
+  height: 75%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.side-bar-item {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background: white;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+    border: transparent solid 2px;
+    transition: border ease-out .2s;
+}
+
+.side-bar-item.nose-opts {
+    background-size: 200px;
+    background-position: 121px -60px;
+}
+
+.img-container {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    max-height: 500px;
+    bottom: 0;
+}
+
+.figure {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+
+.content-wrapper {
+    position: absolute;
+    display: flex;
+    top: 45px;
+    height: calc(100% - 180px);
+    width: calc(100% - 75px);
+    left: 75px;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/183319/football_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+// container for the pkg image
+.packaging {
+    display: none;
+    @media screen and ( min-width: 750px ) {
+        position: absolute;
+        display: flex;
+        height: calc(100% - 30px);
+        top: 15px;
+        width: 50%;
+        right: 100px;
+        z-index: -1;
+    }
+    @media screen and (min-height: 600px) { right: 60px; }
+}
+
+// the image of the packaging
+.pkg {
+    position: absolute;
+    width: 100%;
+}
+
+.pkg { max-height: 550px; }
+
+
+.packaging > .figure {
+    width: 54%;
+    height: 74%;
+    max-height: 450px;
+    left: 25%;
+}
+
+app-figure {
+    width: 100%;
+    height: 100%;
+}
+
+
+.figure {
+    position: absolute;
+    max-height: 600px;
+    bottom:0;
+}
