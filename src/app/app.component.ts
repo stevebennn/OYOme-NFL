@@ -66,29 +66,29 @@ export class AppComponent {
     opts = this.stepsService.opts;
 
     noseOpts = this.opts.noses;
-    noseContainer = this.noseOpts.length * 70;
+    noseContainer = this.noseOpts.length * 60;
     mouthOpts = this.opts.mouths;
-    mouthContainer = this.mouthOpts.length * 70;
+    mouthContainer = this.mouthOpts.length * 60;
     skintoneOpts = this.opts.skintones;
-    skintoneContainer = this.skintoneOpts.length * 100;
+    skintoneContainer = this.skintoneOpts.length * 60;
     eyebrowOpts = this.opts.eyebrows;
-    eyebrowContainer = this.eyebrowOpts.length * 70;
+    eyebrowContainer = this.eyebrowOpts.length * 60;
     hairColorOpts = this.opts.haircolors;
     hairStyleOpts = this.opts.hairstyles;
     mouthAccessoriesOpts = this.opts.mouth_accessories;
     beardOpts = this.opts.beards;
-    beardContainer = this.beardOpts.length * 70;
+    beardContainer = this.beardOpts.length * 60;
     eyesOpts = this.opts.eyes;
-    eyesContainer = this.eyesOpts.length * 70;
+    eyesContainer = this.eyesOpts.length * 60;
     noseAccessoryOpts = this.opts.nose_accessories;
     eyeAccessoriesOpts = this.opts.eye_accessories;
-    eyeAccessoryContainer = this.eyeAccessoriesOpts.length * 70;
+    eyeAccessoryContainer = this.eyeAccessoriesOpts.length * 60;
     packagingOpts = this.opts.packaging;
-    packagingContainer = this.packagingOpts.length * 70;
+    packagingContainer = this.packagingOpts.length * 60;
     teamOpts = this.opts.teams;
-    teamContainer = this.teamOpts.length * 70;
+    teamContainer = this.teamOpts.length * 60;
 
-    stepsContainer = this.steps.length * 70;
+    stepsContainer = this.steps.length * 60;
 
 
     activeSkintone = window.localStorage.getItem('skintone');

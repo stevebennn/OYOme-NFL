@@ -94,10 +94,12 @@
     <!-- BOTTOM OPTION BAR -->
         <section>
         <div class="bottom-option-bar">
-        <div class="bottom-option-bar-inner">
-            
+        
             <!--SKINTONE OPTIONS-->
-            <div [class.hidden]="activeStep !== 'skintone' ">
+            <div
+            class="bottom-option-bar-inner"
+            [class.hidden]="activeStep !== 'skintone' "
+            [ngStyle]="{'width.px': skintoneContainer }">
                 <button
                 class="bottom-bar-item color btn"
                 *ngFor="let skintone of skintoneOpts"
@@ -107,7 +109,10 @@
             </div>
 
             <!--TEAM OPTIONS-->
-            <div [class.hidden]="activeStep !== 'team' ">
+            <div
+            class="bottom-option-bar-inner"
+            [class.hidden]="activeStep !== 'team' "
+            [ngStyle]="{'width.px': teamContainer }">
                 <button
                 class="bottom-bar-item logo btn"
                 *ngFor="let team of teamOpts"
@@ -118,7 +123,10 @@
             </div>
 
             <!--EYE OPTIONS-->
-            <div [class.hidden]="activeStep !== 'eyes' ">
+            <div
+            class="bottom-option-bar-inner"
+            [class.hidden]="activeStep !== 'eyes' "
+            [ngStyle]="{'width.px': eyesContainer }">
                 <button
                 class="bottom-bar-item eyes btn"
                 *ngFor="let eye of eyesOpts"
@@ -128,7 +136,10 @@
             </div>
 
             <!--EYEBROW OPTIONS-->
-            <div [class.hidden]="activeStep !== 'eyebrows' ">
+            <div 
+            class="bottom-option-bar-inner"
+            [class.hidden]="activeStep !== 'eyebrows' "
+            [ngStyle]="{'width.px': eyebrowContainer }">
                 <button
                 class="bottom-bar-item eyebrows btn"
                 *ngFor="let eyebrow of eyebrowOpts"
@@ -147,7 +158,6 @@
                 [class.active]="activeNose == nose"></button>
             </div>
 
-        </div>
         </div>
         </section>
 

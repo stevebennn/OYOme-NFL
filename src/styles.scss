@@ -46,7 +46,6 @@ body {
   background: url('assets/img/dot.svg');
   background-color: $oyo-bg;
   background-size: 35px;
-  height: 100vh;
   width: 100%;
 }
 
@@ -54,19 +53,25 @@ body {
 // this will the the app-root element when
 // in angular...not a class name
 .app-root {
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+}
+
+app-root {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 
 .container {
     display: flex;
     width: 100%;
-    // max-width: 960px;
-    // max-height: 800px;
     position: relative;
 }
 
@@ -188,7 +193,6 @@ background-position: -48px -50px;
         &-inner {
         position: absolute;
         display: flex;
-        width: 1000px;
         flex-wrap: wrap;
       }
 }
