@@ -149,7 +149,10 @@
             </div>
 
             <!--NOSE OPTIONS-->
-            <div [class.hidden]="activeStep !== 'noses' ">
+            <div
+            class="bottom-option-bar-inner"
+            [class.hidden]="activeStep !== 'noses' "
+            [ngStyle]="{'width.px': noseContainer }">
                 <button
                 class="bottom-bar-item nose btn"
                 *ngFor="let nose of noseOpts"
@@ -157,6 +160,19 @@
                 [ngStyle]="{'background-image': 'url(assets/img/noses/nose_' + nose + '.svg)' }"
                 [class.active]="activeNose == nose"></button>
             </div>
+
+            <!--MOUTH OPTIONS-->
+            <div
+            class="bottom-option-bar-inner"
+            [class.hidden]="activeStep !== 'mouths' "
+            [ngStyle]="{'width.px': mouthContainer }">
+                <button
+                class="bottom-bar-item mouth btn"
+                *ngFor="let mouth of mouthOpts"
+                (click)="changeMouth(mouth)"
+                [ngStyle]="{'background-image': 'url(assets/img/mouths/mouth_' + mouth + '.svg)' }"
+                [class.active]="activeMouth == mouth"></button>
+            </div>            
 
         </div>
         </section>
