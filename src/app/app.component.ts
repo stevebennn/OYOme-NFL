@@ -11,7 +11,7 @@ export class AppComponent {
   
     // if this is the first visit...it will set the model
     ngOnInit() {
-        if( window.localStorage.getItem('version') !== "0.36" ) {
+        if( window.localStorage.getItem('version') !== "0.37" ) {
             // sets first load model
             this.activeSkintone = '002';
             this.activeTeam = 'nflari';
@@ -27,19 +27,20 @@ export class AppComponent {
             this.activeBeardColor = 'blk';
             this.activeEyes = "001";
             this.activeNoseAccessory = "000";
-            this.activeEyeAccessory = "000";
+            this.activeEyeAccessory = "005";
             this.activePackage = "001";
             this.activePrimaryText = "Your Name";
             this.activeSecondaryText = "Your Message!";
 
             // in the case they only make the torso...then leave.
             // this sets the model to memory as well...
-            window.localStorage.setItem('version','0.36'); // this is for asset updates
+            window.localStorage.setItem('version','0.37'); // this is for asset updates
             window.localStorage.setItem('skintone',this.activeSkintone);
             window.localStorage.setItem('team',this.activeTeam);
             window.localStorage.setItem('jerseyNumber',this.activeJerseyNumber);
             window.localStorage.setItem('mouthAccessory',this.activeMouthAccessory);
             window.localStorage.setItem('nose','004');
+            window.localStorage.setItem('mouth',this.activeMouth);
             window.localStorage.setItem('eyebrows',this.activeEyebrows);
             window.localStorage.setItem('eyebrowColor','4625');
             window.localStorage.setItem('hairStyle','null');
@@ -48,7 +49,7 @@ export class AppComponent {
             window.localStorage.setItem('beardColor','blk');
             window.localStorage.setItem('eyes','001');
             window.localStorage.setItem('noseAccessory','000');
-            window.localStorage.setItem('eyeAccessory','000');
+            window.localStorage.setItem('eyeAccessory',this.activeEyeAccessory);
             window.localStorage.setItem('package','001');
             window.localStorage.setItem('primaryText','Your Name!');
             window.localStorage.setItem('secondaryText','Your Message!');
@@ -110,12 +111,6 @@ export class AppComponent {
     activePrimaryText = window.localStorage.getItem('primaryText');
     activeSecondaryText = window.localStorage.getItem('secondaryText');
 
-
-    modalActive = true;
-
-    closeModal() {
-        this.modalActive = false;
-    }
 
 
 

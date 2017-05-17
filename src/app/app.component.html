@@ -80,12 +80,11 @@
             <div class="side-option-inner-scroll"
                 [class.hidden]="activeStep !== 'noses' ">
                     <button
-                    class="side-bar-item nose-opts btn"
+                    class="side-bar-item btn nose-opts"
                     *ngFor="let opts of noseAccessoryOpts"
                     (click)="changeNoseAccessory(opts)"
                     [class.active]="activeNoseAccessory == opts "
-                    [ngStyle]="{'background-image': 'url(assets/img/noses/acc_' + opts + '.svg' }"
-                    >
+                    [ngStyle]="{'background-image': 'url(assets/img/noses/acc_' + opts + '.svg)' }">
                     </button>
             </div>
 
