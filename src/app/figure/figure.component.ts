@@ -23,6 +23,7 @@ export class FigureComponent implements OnInit {
   @Input() nose: string;
   @Input() noseAccessory: string;
   @Input() mouth: string;
+  @Input() mouthAccessory: string;
 
 
 }

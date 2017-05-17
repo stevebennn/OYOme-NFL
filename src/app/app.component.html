@@ -25,7 +25,8 @@
                         hairColor="{{ activeHairColor }}"
                         jerseyNumber="{{ activeJerseyNumber }}"
                         noseAccessory="{{ activeNoseAccessory }}"
-                        mouth="{{ activeMouth }}"></app-figure>
+                        mouth="{{ activeMouth }}"
+                        mouthAccessory="{{ activeMouthAccessory }}"></app-figure>
                 </div>
 
                 <div [class.hidden]="stepLevel !== 'features' ">
@@ -40,7 +41,8 @@
                         hairColor="{{ activeHairColor }}"
                         jerseyNumber="{{ activeJerseyNumber }}"
                         noseAccessory="{{ activeNoseAccessory }}"
-                        mouth="{{ activeMouth }}"></app-figure-feature-view>
+                        mouth="{{ activeMouth }}"
+                        mouthAccessory="{{ activeMouthAccessory }}"></app-figure-feature-view>
                 </div>
             </section>
 
@@ -85,6 +87,18 @@
                     (click)="changeNoseAccessory(opts)"
                     [class.active]="activeNoseAccessory == opts "
                     [ngStyle]="{'background-image': 'url(assets/img/noses/acc_' + opts + '.svg)' }">
+                    </button>
+            </div>
+
+            <!-- MOUTH ACCESSORY OPTIONS -->
+            <div class="side-option-inner-scroll"
+                [class.hidden]="activeStep !== 'mouths' ">
+                    <button
+                    class="side-bar-item btn mouth-opts"
+                    *ngFor="let opts of mouthAccessoriesOpts"
+                    (click)="changeMouthAccessory(opts)"
+                    [class.active]="activeMouthAccessory == opts "
+                    [ngStyle]="{'background-image': 'url(assets/img/mouths/acc_' + opts + '.svg)' }">
                     </button>
             </div>
 
