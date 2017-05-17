@@ -26,7 +26,9 @@
                         jerseyNumber="{{ activeJerseyNumber }}"
                         noseAccessory="{{ activeNoseAccessory }}"
                         mouth="{{ activeMouth }}"
-                        mouthAccessory="{{ activeMouthAccessory }}"></app-figure>
+                        mouthAccessory="{{ activeMouthAccessory }}"
+                        beard="{{ activeBeard }}"
+                        beardColor="{{ activeBeardColor }}"></app-figure>
                 </div>
 
                 <div [class.hidden]="stepLevel !== 'features' ">
@@ -42,7 +44,9 @@
                         jerseyNumber="{{ activeJerseyNumber }}"
                         noseAccessory="{{ activeNoseAccessory }}"
                         mouth="{{ activeMouth }}"
-                        mouthAccessory="{{ activeMouthAccessory }}"></app-figure-feature-view>
+                        mouthAccessory="{{ activeMouthAccessory }}"
+                        beard="{{ activeBeard }}"
+                        beardColor="{{ activeBeardColor }}"></app-figure-feature-view>
                 </div>
             </section>
 
@@ -99,6 +103,18 @@
                     (click)="changeMouthAccessory(opts)"
                     [class.active]="activeMouthAccessory == opts "
                     [ngStyle]="{'background-image': 'url(assets/img/mouths/acc_' + opts + '.svg)' }">
+                    </button>
+            </div>
+
+            <!-- BEARD COLORS OPTIONS -->
+            <div class="side-option-inner-scroll"
+                [class.hidden]="activeStep !== 'beards' ">
+                    <button
+                    class="side-bar-item btn"
+                    *ngFor="let opts of hairColorOpts"
+                    (click)="changeBeardColor(opts.name)"
+                    [class.active]="activeBeardColor == opts "
+                    [ngStyle]="{'background': opts.hex }">
                     </button>
             </div>
 
@@ -188,6 +204,19 @@
                 [ngStyle]="{'background-image': 'url(assets/img/mouths/mouth_' + mouth + '.svg)' }"
                 [class.active]="activeMouth == mouth"></button>
             </div>            
+
+            <!--BEARD OPTIONS-->
+            <div
+            class="bottom-option-bar-inner"
+            [class.hidden]="activeStep !== 'beards' "
+            [ngStyle]="{'width.px': beardContainer }">
+                <button
+                class="bottom-bar-item beards btn"
+                *ngFor="let beard of beardOpts"
+                (click)="changeBeard(beard)"
+                [ngStyle]="{'background-image': 'url(assets/img/beards/beard_' + beard + '_' + activeBeardColor + '.svg)' }"
+                [class.active]="activeBeard == beard"></button>
+            </div>  
 
         </div>
         </section>

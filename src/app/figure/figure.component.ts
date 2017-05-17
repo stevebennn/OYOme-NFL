@@ -24,6 +24,7 @@ export class FigureComponent implements OnInit {
   @Input() noseAccessory: string;
   @Input() mouth: string;
   @Input() mouthAccessory: string;
-
+  @Input() beard: string;
+  @Input() beardColor: string;
 
 }
