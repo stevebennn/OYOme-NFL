@@ -167,8 +167,18 @@ app-root {
 }
 
 .bottom-bar-item.eyes {
-background-size: 200px;
-background-position: -48px -50px;
+    background-size: 200px;
+    background-position: -48px -50px;
+}
+
+.bottom-bar-item.mouth {
+    background-size: 120px;
+    background-position: -39px -50px;
+}
+
+.side-bar-item.mouth-opts {
+    background-size: 59px;
+    background-position: -9px -9px;
 }
 
 .bottom-bar-step {

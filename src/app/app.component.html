@@ -24,7 +24,9 @@
                         nose="{{ activeNose }}"
                         hairColor="{{ activeHairColor }}"
                         jerseyNumber="{{ activeJerseyNumber }}"
-                        noseAccessory="{{ activeNoseAccessory }}"></app-figure>
+                        noseAccessory="{{ activeNoseAccessory }}"
+                        mouth="{{ activeMouth }}"
+                        mouthAccessory="{{ activeMouthAccessory }}"></app-figure>
                 </div>
 
                 <div [class.hidden]="stepLevel !== 'features' ">
@@ -38,7 +40,9 @@
                         nose="{{ activeNose }}"
                         hairColor="{{ activeHairColor }}"
                         jerseyNumber="{{ activeJerseyNumber }}"
-                        noseAccessory="{{ activeNoseAccessory }}"></app-figure-feature-view>
+                        noseAccessory="{{ activeNoseAccessory }}"
+                        mouth="{{ activeMouth }}"
+                        mouthAccessory="{{ activeMouthAccessory }}"></app-figure-feature-view>
                 </div>
             </section>
 
@@ -78,12 +82,23 @@
             <div class="side-option-inner-scroll"
                 [class.hidden]="activeStep !== 'noses' ">
                     <button
-                    class="side-bar-item nose-opts btn"
+                    class="side-bar-item btn nose-opts"
                     *ngFor="let opts of noseAccessoryOpts"
                     (click)="changeNoseAccessory(opts)"
                     [class.active]="activeNoseAccessory == opts "
-                    [ngStyle]="{'background-image': 'url(assets/img/noses/acc_' + opts + '.svg' }"
-                    >
+                    [ngStyle]="{'background-image': 'url(assets/img/noses/acc_' + opts + '.svg)' }">
+                    </button>
+            </div>
+
+            <!-- MOUTH ACCESSORY OPTIONS -->
+            <div class="side-option-inner-scroll"
+                [class.hidden]="activeStep !== 'mouths' ">
+                    <button
+                    class="side-bar-item btn mouth-opts"
+                    *ngFor="let opts of mouthAccessoriesOpts"
+                    (click)="changeMouthAccessory(opts)"
+                    [class.active]="activeMouthAccessory == opts "
+                    [ngStyle]="{'background-image': 'url(assets/img/mouths/acc_' + opts + '.svg)' }">
                     </button>
             </div>
 
@@ -149,7 +164,10 @@
             </div>
 
             <!--NOSE OPTIONS-->
-            <div [class.hidden]="activeStep !== 'noses' ">
+            <div
+            class="bottom-option-bar-inner"
+            [class.hidden]="activeStep !== 'noses' "
+            [ngStyle]="{'width.px': noseContainer }">
                 <button
                 class="bottom-bar-item nose btn"
                 *ngFor="let nose of noseOpts"
@@ -157,6 +175,19 @@
                 [ngStyle]="{'background-image': 'url(assets/img/noses/nose_' + nose + '.svg)' }"
                 [class.active]="activeNose == nose"></button>
             </div>
+
+            <!--MOUTH OPTIONS-->
+            <div
+            class="bottom-option-bar-inner"
+            [class.hidden]="activeStep !== 'mouths' "
+            [ngStyle]="{'width.px': mouthContainer }">
+                <button
+                class="bottom-bar-item mouth btn"
+                *ngFor="let mouth of mouthOpts"
+                (click)="changeMouth(mouth)"
+                [ngStyle]="{'background-image': 'url(assets/img/mouths/mouth_' + mouth + '.svg)' }"
+                [class.active]="activeMouth == mouth"></button>
+            </div>            
 
         </div>
         </section>
