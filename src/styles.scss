@@ -23,21 +23,32 @@ $bottom-option-bar-bg: #E5E5E5;
 
 .side-bar-item.active {
     border: $oyo-gold solid 2px;
-    transition: border ease-out .2s;
+    transform: scale(1.2);
+    // transition: border ease-out .2s;
 }
 
-.bottom-bar-step.active { background: $oyo-gold; }
+.bottom-bar-step.active {
+    background: $oyo-gold;
+    transform: scale(1.2);
+    }
 
 .bottom-bar-item.active {
     border: $oyo-gold solid 2px;
-    transition: border ease-out .2s;
+    transform: scale(1.2);
+    // transition: border ease-out .2s;
  }
 
  .btn {
      cursor: pointer;
+     transform: scale(1);
+     transition: transform ease-out .2s;
      &:focus {
          outline: none;
          border: $oyo-gold solid 2px  ;
+     }
+     &:hover {
+         transform: scale(1.2);
+         transition: transform ease-out .2s;
      }
 }
 
@@ -81,7 +92,6 @@ app-root {
     width:100%;
     background: $oyo-blue;
     padding: 10px;
-    box-shadow: rgba(0,0,0,.2) 0px 3px 6px;
     z-index: 10;
 }
 
@@ -120,7 +130,7 @@ app-root {
     align-items: center;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 75px;
     background: $oyo-blue;
     flex-direction: row;
     flex-wrap: wrap;
@@ -143,7 +153,6 @@ app-root {
     margin: 5px;
     border-radius: 5px;
     border: transparent solid 2px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
     &:focus {
         outline: none;
     }
@@ -184,7 +193,7 @@ app-root {
 .bottom-bar-step {
     width: 55px;
     height: 60px;
-    transition: background ease-out .2s;
+    // transition: background ease-out .2s;
     border: transparent solid 2px;
     outline: none;
 }
@@ -192,7 +201,7 @@ app-root {
     position: absolute;
     display: flex;
     align-items: center;
-    bottom: 60px;
+    bottom: 75px;
     width: 100%;
     height: 75px;
     background: $bottom-option-bar-bg;
@@ -216,7 +225,6 @@ app-root {
     width: 75px;
     height: calc(100% - 165px);
     background: $side-option-bar-bg;
-    box-shadow:rgba(0, 0, 0, 0.3) 3px 0px 4px;
 }
 
 
@@ -238,9 +246,8 @@ app-root {
     background: white;
     margin: 5px;
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
     border: transparent solid 2px;
-    transition: border ease-out .2s;
+    // transition: border ease-out .2s;
 }
 
 .side-bar-item.nose-opts {
