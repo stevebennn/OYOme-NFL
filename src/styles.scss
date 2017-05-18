@@ -23,21 +23,27 @@ $bottom-option-bar-bg: #E5E5E5;
 
 .side-bar-item.active {
     border: $oyo-gold solid 2px;
-    transition: border ease-out .2s;
+    // transition: border ease-out .2s;
 }
 
 .bottom-bar-step.active { background: $oyo-gold; }
 
 .bottom-bar-item.active {
     border: $oyo-gold solid 2px;
-    transition: border ease-out .2s;
+    // transition: border ease-out .2s;
  }
 
  .btn {
      cursor: pointer;
+     transform: scale(1);
+     transition: transform ease-out .2s;
      &:focus {
          outline: none;
          border: $oyo-gold solid 2px  ;
+     }
+     &:hover {
+         transform: scale(1.1);
+         transition: transform ease-out .2s;
      }
 }
 
@@ -184,7 +190,7 @@ app-root {
 .bottom-bar-step {
     width: 55px;
     height: 60px;
-    transition: background ease-out .2s;
+    // transition: background ease-out .2s;
     border: transparent solid 2px;
     outline: none;
 }
@@ -240,7 +246,7 @@ app-root {
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
     border: transparent solid 2px;
-    transition: border ease-out .2s;
+    // transition: border ease-out .2s;
 }
 
 .side-bar-item.nose-opts {
