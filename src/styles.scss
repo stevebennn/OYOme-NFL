@@ -19,7 +19,7 @@ $oyo-bg: #3042a8;
 $side-option-bar-bg: #A5A5A5;
 $bottom-option-bar-bg: #E5E5E5;
 
-$bottom-option-bar-height: 75px;
+$bottom-option-bar-height: 80px;
 
 
 
@@ -146,7 +146,7 @@ app-root {
     background: $oyo-blue;
     flex-direction: row;
     flex-wrap: wrap;
-    overflow-x: scroll;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     &::-webkit-scrollbar {
         height: 12px;
@@ -231,8 +231,21 @@ app-root {
     background: $bottom-option-bar-bg;
     flex-direction: row;
     flex-wrap: wrap;
-    overflow: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        height: 12px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparentize($white,.7);
+        border-radius: 0px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: rgba($oyo-blue,.8);
+        border-radius: 0px;
+    }
         &-inner {
         position: absolute;
         display: flex;
@@ -247,7 +260,7 @@ app-root {
     display: flex;
     top: 45px;
     width: 85px;
-    height: calc(100% - 165px);
+    height: calc(100% - 213px);
     background: $side-option-bar-bg;
 }
 
@@ -257,9 +270,9 @@ app-root {
   display: flex;
   flex-wrap: wrap;
   width: 75px;
-  height: 75%;
-  overflow-y: scroll;
-  top: calc( 50% - ( 75% / 2 ) );
+  height: 85%;
+  overflow-y: auto;
+  top: calc( 50% - ( 85% / 2 ) );
   left: calc( 50% - ( 75px / 2 ) );
   -webkit-overflow-scrolling: touch;
     &::-webkit-scrollbar {
