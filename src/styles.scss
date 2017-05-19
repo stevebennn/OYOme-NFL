@@ -149,7 +149,7 @@ app-root {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     &::-webkit-scrollbar {
-        width: 12px;
+        height: 12px;
     }
     
     &::-webkit-scrollbar-track {
@@ -315,9 +315,9 @@ app-root {
     position: absolute;
     display: flex;
     top: 45px;
-    height: calc(100% - 180px);
-    width: calc(100% - 75px);
-    left: 75px;
+    height: calc(100% - 208px);
+    width: calc(100% - 85px);
+    left: 85px;
     background: url('assets/img/football_bg.jpg');
     background-size: cover;
     background-position: center;
