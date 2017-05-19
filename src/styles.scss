@@ -59,11 +59,19 @@ $bottom-option-bar-height: 75px;
 
 // Globals
 body {
-  background: url('assets/img/dot.svg');
-  background-color: $oyo-bg;
-  background-size: 35px;
-  width: 100%;
+    background: url('assets/img/dot.svg');
+    background-color: $oyo-bg;
+    background-size: 35px;
+    width: 100%;
 }
+
+html {
+    -overflow-style: autohiding-scrollbar;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -moz-overflow-style: -moz-autohiding-scrollbar;
+    -webkit-overflow-style: -webkit-autohiding-scrollbar;
+}
+
 
 
 // this will the the app-root element when
@@ -134,12 +142,25 @@ app-root {
     display: flex;
     bottom: 0;
     width: 100%;
-    height: 75px;
+    height: 88px;
     background: $oyo-blue;
     flex-direction: row;
     flex-wrap: wrap;
-    overflow: scroll;
+    overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparentize($white,.7);
+        border-radius: 0px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: rgba($oyo-blue,.8);
+        border-radius: 0px;
+    }
       &-inner {
         position: absolute;
         display: flex;
@@ -204,7 +225,7 @@ app-root {
 .bottom-option-bar {
     position: absolute;
     display: flex;
-    bottom: 75px;
+    bottom: 88px;
     width: 100%;
     height: $bottom-option-bar-height;
     background: $bottom-option-bar-bg;
@@ -246,18 +267,14 @@ app-root {
     }
     
     &::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-        border-radius: 10px;
+        background: transparentize($white,.7);
+        border-radius: 0px;
     }
     
     &::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+        background: rgba($oyo-blue,.8);
+        border-radius: 0px;
     }
-
-
-
-
 
 }
 
