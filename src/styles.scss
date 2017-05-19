@@ -225,7 +225,7 @@ app-root {
     position: absolute;
     display: flex;
     top: 45px;
-    width: 75px;
+    width: 85px;
     height: calc(100% - 165px);
     background: $side-option-bar-bg;
 }
@@ -235,12 +235,30 @@ app-root {
     position: absolute;
   display: flex;
   flex-wrap: wrap;
-  width: 55px;
+  width: 75px;
   height: 75%;
-  overflow: scroll;
+  overflow-y: scroll;
   top: calc( 50% - ( 75% / 2 ) );
-  left: calc( 50% - ( 55px / 2 ) );
+  left: calc( 50% - ( 75px / 2 ) );
   -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }
+
+
+
+
+
 }
 
 
