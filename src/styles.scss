@@ -224,7 +224,6 @@ app-root {
 .side-option-bar {
     position: absolute;
     display: flex;
-    align-items: center;
     top: 45px;
     width: 75px;
     height: calc(100% - 165px);
@@ -233,12 +232,14 @@ app-root {
 
 
 .side-option-inner-scroll {
+    position: absolute;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  
-  width: 100%;
+  width: 55px;
   height: 75%;
   overflow: scroll;
+  top: calc( 50% - ( 75% / 2 ) );
+  left: calc( 50% - ( 55px / 2 ) );
   -webkit-overflow-scrolling: touch;
 }
 
