@@ -29,32 +29,43 @@ $bottom-option-bar-height: 80px;
 .side-bar-item.active {
     border: $oyo-gold solid 2px;
     transform: scale(1.2);
-    // transition: border ease-out .2s;
+    box-shadow:0 4px 5px rgba(0,0,0,.1);
 }
 
 .bottom-bar-step.active {
     background: $oyo-gold;
     transform: scale(1.2);
-    }
+    box-shadow:0 4px 5px rgba(0,0,0,.1);
+}
 
 .bottom-bar-item.active {
     border: $oyo-gold solid 2px;
     transform: scale(1.2);
-    // transition: border ease-out .2s;
+    box-shadow:0 4px 5px rgba(0,0,0,.1);
  }
 
  .btn {
      cursor: pointer;
+    //  box-shadow:0 1px 1px rgba(0,0,0,.3);
      transform: scale(1);
-     transition: transform ease-out .2s;
+     transition: all ease-out .3s;
+     -webkit-tap-highlight-color: rgba(0,0,0,0);
      &:focus {
          outline: none;
          border: $oyo-gold solid 2px  ;
      }
      &:hover {
          transform: scale(1.2);
-         transition: transform ease-out .2s;
+        //  box-shadow:0 2px 6px rgba(0,0,0,.2);
+         transition: all ease-out .2s;
      }
+}
+
+.btn-shadow {
+  box-shadow:0 1px 1px rgba(0,0,0,.3); 
+  &:hover {
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
 }
 
 // Globals
@@ -293,6 +304,7 @@ app-root {
 
 
 .side-bar-item {
+    position: relative;
     display: inline-block;
     width: 45px;
     height: 45px;
@@ -300,7 +312,7 @@ app-root {
     margin: 5px;
     border-radius: 5px;
     border: transparent solid 2px;
-    // transition: border ease-out .2s;
+    left: calc( 50% - 29.5px );
 }
 
 .side-bar-item.nose-opts {

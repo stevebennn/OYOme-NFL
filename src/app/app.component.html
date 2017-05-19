@@ -61,7 +61,7 @@
             <div class="side-option-inner-scroll"
                 [class.hidden]="activeStep !== 'eyes' ">
                     <button
-                    class="side-bar-item btn"
+                    class="side-bar-item btn btn-shadow"
                     *ngFor="let acc of eyeAccessoriesOpts"
                     (click)="changeEyeAccessory(acc)"
                     [class.active]="activeEyeAccessory == acc "
@@ -73,7 +73,7 @@
             <div class="side-option-inner-scroll"
                 [class.hidden]="activeStep !== 'eyebrows' ">
                     <button
-                    class="side-bar-item btn"
+                    class="side-bar-item btn btn-shadow"
                     *ngFor="let color of hairColorOpts"
                     (click)="changeEyebrowColor(color.name)"
                     [class.active]="activeEyebrowColor == color.hex "
@@ -86,7 +86,7 @@
             <div class="side-option-inner-scroll"
                 [class.hidden]="activeStep !== 'noses' ">
                     <button
-                    class="side-bar-item btn nose-opts"
+                    class="side-bar-item btn btn-shadow nose-opts"
                     *ngFor="let opts of noseAccessoryOpts"
                     (click)="changeNoseAccessory(opts)"
                     [class.active]="activeNoseAccessory == opts "
@@ -98,7 +98,7 @@
             <div class="side-option-inner-scroll"
                 [class.hidden]="activeStep !== 'mouths' ">
                     <button
-                    class="side-bar-item btn mouth-opts"
+                    class="side-bar-item btn btn-shadow mouth-opts"
                     *ngFor="let opts of mouthAccessoriesOpts"
                     (click)="changeMouthAccessory(opts)"
                     [class.active]="activeMouthAccessory == opts "
@@ -110,7 +110,7 @@
             <div class="side-option-inner-scroll"
                 [class.hidden]="activeStep !== 'beards' ">
                     <button
-                    class="side-bar-item btn"
+                    class="side-bar-item btn btn-shadow"
                     *ngFor="let opts of hairColorOpts"
                     (click)="changeBeardColor(opts.name)"
                     [class.active]="activeBeardColor == opts "
@@ -132,7 +132,7 @@
             [class.hidden]="activeStep !== 'skintone' "
             [ngStyle]="{'width.px': skintoneContainer }">
                 <button
-                class="bottom-bar-item color btn"
+                class="bottom-bar-item color btn btn-shadow"
                 *ngFor="let skintone of skintoneOpts"
                 [ngStyle]="{'background-color': skintone.hex }"
                 (click)="changeSkintone(skintone.name)"
@@ -145,7 +145,7 @@
             [class.hidden]="activeStep !== 'team' "
             [ngStyle]="{'width.px': teamContainer }">
                 <button
-                class="bottom-bar-item logo btn"
+                class="bottom-bar-item logo btn btn-shadow"
                 *ngFor="let team of teamOpts"
                 (click)="changeTeam(team.name)"
                 [ngStyle]="{'background-image': 'url(assets/img/logos/' + team.name + '.png)' }"
@@ -159,7 +159,7 @@
             [class.hidden]="activeStep !== 'eyes' "
             [ngStyle]="{'width.px': eyesContainer }">
                 <button
-                class="bottom-bar-item eyes btn"
+                class="bottom-bar-item eyes btn btn-shadow"
                 *ngFor="let eye of eyesOpts"
                 (click)="changeEyes(eye)"
                 [ngStyle]="{'background-image': 'url(assets/img/eyes/eyes_' + eye + '.svg)' }"
@@ -172,7 +172,7 @@
             [class.hidden]="activeStep !== 'eyebrows' "
             [ngStyle]="{'width.px': eyebrowContainer }">
                 <button
-                class="bottom-bar-item eyebrows btn"
+                class="bottom-bar-item eyebrows btn btn-shadow"
                 *ngFor="let eyebrow of eyebrowOpts"
                 (click)="changeEyebrow(eyebrow)"
                 [ngStyle]="{'background-image': 'url(assets/img/eyebrows/eyebrows_' + eyebrow + '_blk.svg)' }"
@@ -185,7 +185,7 @@
             [class.hidden]="activeStep !== 'noses' "
             [ngStyle]="{'width.px': noseContainer }">
                 <button
-                class="bottom-bar-item nose btn"
+                class="bottom-bar-item nose btn btn-shadow"
                 *ngFor="let nose of noseOpts"
                 (click)="changeNose(nose)"
                 [ngStyle]="{'background-image': 'url(assets/img/noses/nose_' + nose + '.svg)' }"
@@ -198,7 +198,7 @@
             [class.hidden]="activeStep !== 'mouths' "
             [ngStyle]="{'width.px': mouthContainer }">
                 <button
-                class="bottom-bar-item mouth btn"
+                class="bottom-bar-item mouth btn btn-shadow"
                 *ngFor="let mouth of mouthOpts"
                 (click)="changeMouth(mouth)"
                 [ngStyle]="{'background-image': 'url(assets/img/mouths/mouth_' + mouth + '.svg)' }"
@@ -211,7 +211,7 @@
             [class.hidden]="activeStep !== 'beards' "
             [ngStyle]="{'width.px': beardContainer }">
                 <button
-                class="bottom-bar-item beards btn"
+                class="bottom-bar-item beards btn btn-shadow"
                 *ngFor="let beard of beardOpts"
                 (click)="changeBeard(beard)"
                 [ngStyle]="{'background-image': 'url(assets/img/beards/beard_' + beard + '_' + activeBeardColor + '.svg)' }"
