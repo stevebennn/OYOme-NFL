@@ -19,6 +19,11 @@ $oyo-bg: #3042a8;
 $side-option-bar-bg: #A5A5A5;
 $bottom-option-bar-bg: #E5E5E5;
 
+$bottom-option-bar-height: 75px;
+
+
+
+
 .hidden { display: none !important; }
 
 .side-bar-item.active {
@@ -127,7 +132,6 @@ app-root {
 .bottom-bar {
     position: absolute;
     display: flex;
-    align-items: center;
     bottom: 0;
     width: 100%;
     height: 75px;
@@ -139,8 +143,8 @@ app-root {
       &-inner {
         position: absolute;
         display: flex;
-        // width: 1000px;
         flex-wrap: wrap;
+        top: calc( 50% - ( 60px / 2 ) )
       }
 }
 
@@ -200,10 +204,9 @@ app-root {
 .bottom-option-bar {
     position: absolute;
     display: flex;
-    align-items: center;
     bottom: 75px;
     width: 100%;
-    height: 75px;
+    height: $bottom-option-bar-height;
     background: $bottom-option-bar-bg;
     flex-direction: row;
     flex-wrap: wrap;
@@ -213,6 +216,7 @@ app-root {
         position: absolute;
         display: flex;
         flex-wrap: wrap;
+        top: calc(50% - (55px / 2));
       }
 }
 
