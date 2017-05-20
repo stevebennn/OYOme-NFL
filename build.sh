@@ -1,9 +1,16 @@
 # this is just a test script
-cd ../Documents/OYOme-NFL
 
 ng build --prod --aot
 
+rm -r ../OYOme-NFL_prod/*
+
+ls
+
 cp -rf dist/ ../OYOme-NFL_Prod/
+
+
+
+
 
 git add -A
 
@@ -14,3 +21,4 @@ git push
 ECHO "okay...pushed it real good"
 
 ssh root@107.170.79.219
+
