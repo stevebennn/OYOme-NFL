@@ -50,8 +50,6 @@
                 </div>
             </section>
 
-            <button class="view-toggle">toggle</button>
-
         </div>
     
     
@@ -78,7 +76,7 @@
                     class="side-bar-item btn btn-shadow"
                     *ngFor="let color of hairColorOpts"
                     (click)="changeEyebrowColor(color.name)"
-                    [class.active]="activeEyebrowColor == color.hex "
+                    [class.active]="activeEyebrowColor == color.name "
                     [ngStyle]="{'background': color.hex }"
                     >
                     </button>
@@ -115,7 +113,7 @@
                     class="side-bar-item btn btn-shadow"
                     *ngFor="let opts of hairColorOpts"
                     (click)="changeBeardColor(opts.name)"
-                    [class.active]="activeBeardColor == opts "
+                    [class.active]="activeBeardColor == opts.name "
                     [ngStyle]="{'background': opts.hex }">
                     </button>
             </div>
