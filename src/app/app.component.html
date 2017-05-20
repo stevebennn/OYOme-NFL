@@ -13,6 +13,7 @@
             <!--The "app-figure" element is a way to encapsulate the gnarly SVG code. 
             This way all we have to do is pass it values :)-->
             <section class="figure">
+
                 <div [class.hidden]="stepLevel !== 'figure' ">
                     <app-figure
                         skintone="{{activeSkintone}}"
@@ -48,6 +49,8 @@
                         beard="{{ activeBeard }}"
                         beardColor="{{ activeBeardColor }}"></app-figure-feature-view>
                 </div>
+
+
             </section>
 
         </div>
@@ -57,6 +60,13 @@
     <section>
         <div class="side-option-bar">
             
+            <div class="side-secondary-options">
+                <button class="side-bar-item btn" (click)="toggleStepLevel(stepLevel)" >
+                    <span *ngIf="stepLevel === 'figure'">+🔍</span>
+                    <span *ngIf="stepLevel === 'features'">-🔍</span>
+                </button>
+            </div>
+
             <!--EYE ACCESSORY OPTIONS-->
             <div class="side-option-inner-scroll"
                 [class.hidden]="activeStep !== 'eyes' ">
