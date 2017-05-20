@@ -126,6 +126,16 @@ export class AppComponent {
     }
 
 
+    toggleStepLevel(stepLevel) {
+        switch(stepLevel) {
+            case 'figure':
+                return this.stepLevel = 'features';
+                
+            case 'features':
+                return this.stepLevel = 'figure';
+        }
+    }
+
     changeSkintone(color) {
         this.activeSkintone = color;
         window.localStorage.setItem('skintone',color);

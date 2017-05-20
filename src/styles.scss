@@ -265,16 +265,15 @@ app-root {
 }
 
 
-.side-option-inner-scroll {
+.side-option-inner-scroll,
+.side-secondary-options {
     position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  width: 75px;
-  height: 85%;
-  overflow-y: auto;
-  top: calc( 50% - ( 85% / 2 ) );
-  left: calc( 50% - ( 75px / 2 ) );
-  -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-wrap: wrap;
+    width: 75px;
+    overflow-y: auto;
+    left: calc( 50% - ( 75px / 2 ) );
+    -webkit-overflow-scrolling: touch;
     &::-webkit-scrollbar {
         width: 12px;
     }
@@ -289,6 +288,22 @@ app-root {
         border-radius: 0px;
     }
 
+}
+
+.side-option-inner-scroll {
+    height: 60%;
+    bottom: 20px;
+}
+
+.side-secondary-options {
+    height: calc( 30% - 10px);
+    top: 10px;
+    & > .btn {
+        &:focus {
+            outline: none;
+            border: none ;
+        }
+    }
 }
 
 
@@ -379,4 +394,14 @@ app-figure {
     position: absolute;
     max-height: 600px;
     bottom:0;
+}
+
+.zoom-button {
+    position: absolute;
+    border: none;
+    background: transparentize($white,.2);
+    padding: 10px;
+    z-index: 10;
+    top:0;
+    right:0;
 }
