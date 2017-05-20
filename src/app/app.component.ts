@@ -5,7 +5,20 @@ import { StepsService } from './steps.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  styles:[`
+  
+    .bottom-bar-inner {
+        width: ;
+    }
+
+      @media screen and (min-width: 450px ){ 
+          .bottom-bar-inner {
+            width: 80%;
+            left: 50%;
+            margin-left: -40%;
+            }
+        }`]
 })
 export class AppComponent {
   

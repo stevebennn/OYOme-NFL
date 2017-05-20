@@ -165,7 +165,10 @@ app-root {
         position: absolute;
         display: flex;
         flex-wrap: wrap;
-        top: calc( 50% - ( 60px / 2 ) )
+        top: calc( 50% - ( 60px / 2 ) );
+        // width: 80%;
+        // min-width: 500px;
+        justify-content: space-around;
       }
 }
 
