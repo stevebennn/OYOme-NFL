@@ -1,5 +1,5 @@
 MESSAGE=$1
-# echo "'"$MESSAGE"'"
+str="'$*'"
 # git add -A
 
 git commit -m $MESSAGE
