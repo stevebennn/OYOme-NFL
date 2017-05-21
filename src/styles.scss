@@ -145,6 +145,7 @@ app-root {
     height: 88px;
     background: $oyo-blue;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -162,12 +163,11 @@ app-root {
         border-radius: 0px;
     }
       &-inner {
-        position: absolute;
+        // position: absolute;
+        width: 75%;
         display: flex;
         flex-wrap: wrap;
         top: calc( 50% - ( 60px / 2 ) );
-        // width: 80%;
-        // min-width: 500px;
         justify-content: space-around;
       }
 }

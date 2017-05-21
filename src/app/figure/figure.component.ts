@@ -1,17 +1,18 @@
 import { Component, OnInit, Input} from '@angular/core';
+import { AppComponent } from '../app.component';
+
 
 @Component({
   selector: 'app-figure',
   templateUrl: './figure.component.html',
-  styleUrls: ['./figure.component.scss']
+  styleUrls: ['./figure.component.scss'],
 })
 export class FigureComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
 
-  ngOnInit() {
-  }
-  
+  }  
+
   @Input() skintone: string;
   @Input() team: string;
   @Input() eyes: string;
@@ -26,5 +27,11 @@ export class FigureComponent implements OnInit {
   @Input() mouthAccessory: string;
   @Input() beard: string;
   @Input() beardColor: string;
+
+
+
+    ngOnInit() {
+    
+    }
 
 }

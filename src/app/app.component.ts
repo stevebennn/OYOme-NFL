@@ -2,23 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StepsService } from './steps.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  styles:[`
-  
-    .bottom-bar-inner {
-        width: ;
-    }
-
-      @media screen and (min-width: 450px ){ 
-          .bottom-bar-inner {
-            width: 80%;
-            left: 50%;
-            margin-left: -40%;
-            }
-        }`]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   
@@ -123,7 +111,6 @@ export class AppComponent {
     activePackage = window.localStorage.getItem('package');
     activePrimaryText = window.localStorage.getItem('primaryText');
     activeSecondaryText = window.localStorage.getItem('secondaryText');
-
 
 
 
