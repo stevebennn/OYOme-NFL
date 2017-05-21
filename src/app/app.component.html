@@ -140,7 +140,7 @@
             <div
             class="bottom-option-bar-inner"
             [class.hidden]="activeStep !== 'skintone' "
-            [ngStyle]="{'width.px': skintoneContainer }">
+            [ngStyle]="{'min-width.px': skintoneContainer }">
                 <button
                 class="bottom-bar-item color btn btn-shadow"
                 *ngFor="let skintone of skintoneOpts"
@@ -153,7 +153,7 @@
             <div
             class="bottom-option-bar-inner"
             [class.hidden]="activeStep !== 'team' "
-            [ngStyle]="{'width.px': teamContainer }">
+            [ngStyle]="{'min-width.px': teamContainer }">
                 <button
                 class="bottom-bar-item logo btn btn-shadow"
                 *ngFor="let team of teamOpts"
@@ -167,7 +167,7 @@
             <div
             class="bottom-option-bar-inner"
             [class.hidden]="activeStep !== 'eyes' "
-            [ngStyle]="{'width.px': eyesContainer }">
+            [ngStyle]="{'min-width.px': eyesContainer }">
                 <button
                 class="bottom-bar-item eyes btn btn-shadow"
                 *ngFor="let eye of eyesOpts"
@@ -180,7 +180,7 @@
             <div 
             class="bottom-option-bar-inner"
             [class.hidden]="activeStep !== 'eyebrows' "
-            [ngStyle]="{'width.px': eyebrowContainer }">
+            [ngStyle]="{'min-width.px': eyebrowContainer }">
                 <button
                 class="bottom-bar-item eyebrows btn btn-shadow"
                 *ngFor="let eyebrow of eyebrowOpts"
@@ -193,7 +193,7 @@
             <div
             class="bottom-option-bar-inner"
             [class.hidden]="activeStep !== 'noses' "
-            [ngStyle]="{'width.px': noseContainer }">
+            [ngStyle]="{'min-width.px': noseContainer }">
                 <button
                 class="bottom-bar-item nose btn btn-shadow"
                 *ngFor="let nose of noseOpts"
@@ -206,7 +206,7 @@
             <div
             class="bottom-option-bar-inner"
             [class.hidden]="activeStep !== 'mouths' "
-            [ngStyle]="{'width.px': mouthContainer }">
+            [ngStyle]="{'min-width.px': mouthContainer }">
                 <button
                 class="bottom-bar-item mouth btn btn-shadow"
                 *ngFor="let mouth of mouthOpts"
@@ -219,7 +219,7 @@
             <div
             class="bottom-option-bar-inner"
             [class.hidden]="activeStep !== 'beards' "
-            [ngStyle]="{'width.px': beardContainer }">
+            [ngStyle]="{'min-width.px': beardContainer }">
                 <button
                 class="bottom-bar-item beards btn btn-shadow"
                 *ngFor="let beard of beardOpts"

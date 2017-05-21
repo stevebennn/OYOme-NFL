@@ -236,6 +236,9 @@ app-root {
     height: $bottom-option-bar-height;
     background: $bottom-option-bar-bg;
     flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
     flex-wrap: wrap;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -253,10 +256,13 @@ app-root {
         border-radius: 0px;
     }
         &-inner {
-        position: absolute;
+        position: relative;
         display: flex;
         flex-wrap: wrap;
-        top: calc(50% - (55px / 2));
+        width: 80%;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
       }
 }
 
