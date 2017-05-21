@@ -2,11 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StepsService } from './steps.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   
