@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, NgZone } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StepsService } from './steps.service';
 
@@ -56,7 +56,45 @@ export class AppComponent {
         }
     }
     
-    constructor(private stepsService: StepsService) {}
+    // setting variables
+    public stepsPosition: string = 'flex-start';
+    public teamsPosition: string = 'flex-start';
+
+    constructor(private stepsService: StepsService, zone: NgZone) {
+
+        // setting each media query
+        const stepsMql: MediaQueryList = window.matchMedia('(min-width:'+this.stepsContainer+'px)');
+        const teamsMql: MediaQueryList = window.matchMedia('(min-width:'+this.teamContainer+'px)');
+        const skintoneMql: MediaQueryList = window.matchMedia('(min-width:'+this.skintoneContainer+'px)');
+        const eyesMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyesContainer+'px)');
+        const eyebrowsMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyebrowContainer+'px)');
+        
+        
+        // set the position based on viewport at loadtime
+        this.stepsPosition = stepsMql.matches ? 'center' : 'flex-start';
+        this.teamsPosition = stepsMql.matches ? 'center' : 'flex-start';
+
+
+
+
+
+        stepsMql.addListener((stepsMql: MediaQueryList) => {
+            zone.run( () => { 
+                this.stepsPosition = stepsMql.matches ? 'center' : 'flex-start';
+            });
+        });
+
+        teamsMql.addListener((stepsMql: MediaQueryList) => {
+            zone.run( () => { 
+                this.teamsPosition= stepsMql.matches ? 'center' : 'flex-start';
+            });
+        });
+        
+    }
+
+
+
+
 
 
     // Application default values
