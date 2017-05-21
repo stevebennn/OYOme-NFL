@@ -1,7 +1,7 @@
 MESSAGE=$1
-
-git add -A
+# echo "'"$MESSAGE"'"
+# git add -A
 
 git commit -m $MESSAGE
 
-git push
+# git push

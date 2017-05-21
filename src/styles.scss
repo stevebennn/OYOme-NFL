@@ -170,13 +170,11 @@ app-root {
         height: 70px;
         display: flex;
         flex-wrap: wrap;
-        // top: calc( 50% - ( 60px / 2 ) );
         justify-content: space-around;
         align-content: center;
         align-items: center;
       }
 }
-
 
 .bottom-bar-item {
     display: inline-block;
