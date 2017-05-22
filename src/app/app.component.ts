@@ -11,8 +11,11 @@ export class AppComponent {
   
     // if this is the first visit...it will set the model
     ngOnInit() {
-        if( window.localStorage.getItem('version') !== "0.37" ) {
+        if( window.localStorage.getItem('version') !== "0.6" ) {
             // sets first load model
+
+            this.model = this.model
+
             this.activeSkintone = '002';
             this.activeTeam = 'nflari';
             this.activeJerseyNumber = "14";
@@ -34,7 +37,7 @@ export class AppComponent {
 
             // in the case they only make the torso...then leave.
             // this sets the model to memory as well...
-            window.localStorage.setItem('version','0.37'); // this is for asset updates
+            window.localStorage.setItem('version','0.6'); // this is for asset updates
             window.localStorage.setItem('skintone',this.activeSkintone);
             window.localStorage.setItem('team',this.activeTeam);
             window.localStorage.setItem('jerseyNumber',this.activeJerseyNumber);
@@ -53,6 +56,10 @@ export class AppComponent {
             window.localStorage.setItem('package','001');
             window.localStorage.setItem('primaryText','Your Name!');
             window.localStorage.setItem('secondaryText','Your Message!');
+
+
+            window.localStorage.setItem('model',JSON.stringify(this.model));
+
         }
     }
 
@@ -163,7 +170,29 @@ export class AppComponent {
 
 
 
-
+    model = {
+        team: 'nflari',
+        skintone: '002',
+        face: {
+            eyes: '001',
+            eyeAccessory: '005',
+            eyebrows: '001',
+            eyebrowColor: '4625',
+            nose: '007',
+            noseAccessory: '002',
+            mouth: '007',
+            mouthAccessory: '002',
+            beard: '007',
+            beardColor: '4625'
+        },
+        fullname: 'Your Name',
+        gender: 'male',
+        handedness: 'right',
+        league: 'MLB',
+        name: 'LAST NAME',
+        number: 14,
+        position: 'CA',
+    }
 
     // Application default values
     activeStep = "skintone";
