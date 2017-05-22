@@ -69,7 +69,6 @@ export class AppComponent {
     public mouthsPosition: string = 'flex-start';
 
 
-
     constructor(private stepsService: StepsService, zone: NgZone) {
 
         // setting each media query
@@ -92,7 +91,6 @@ export class AppComponent {
         this.eyebrowsPosition = eyebrowsMql.matches ? 'center' : 'flex-start';
         this.nosesPosition = nosesMql.matches ? 'center' : 'flex-start';
         this.mouthsPosition = mouthsMql.matches ? 'center' : 'flex-start';
-
 
 
 
