@@ -167,6 +167,7 @@ app-root {
       &-inner {
         position: relative;
         width: 75%;
+        max-width: 1260px;
         height: 70px;
         display: flex;
         flex-wrap: wrap;
@@ -260,6 +261,7 @@ app-root {
         display: flex;
         flex-wrap: wrap;
         width: 80%;
+        max-width: 1260px;
         justify-content: space-around;
         align-content: center;
         align-items: center;

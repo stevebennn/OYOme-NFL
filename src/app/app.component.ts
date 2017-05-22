@@ -55,16 +55,17 @@ export class AppComponent {
             window.localStorage.setItem('secondaryText','Your Message!');
         }
     }
-    
+
+
+
+
     // setting variables
     public stepsPosition: string = 'flex-start';
     public skintonePosition: string = 'flex-start';
     public teamsPosition: string = 'flex-start';
     public eyesPosition: string = 'flex-start';
     public eyebrowsPosition: string = 'flex-start';
-
-
-
+    public nosesPosition: string = 'flex-start';
 
 
 
@@ -76,6 +77,7 @@ export class AppComponent {
         const teamsMql: MediaQueryList = window.matchMedia('(min-width:'+this.teamContainer+'px)');
         const eyesMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyesContainer+'px)');
         const eyebrowsMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyebrowContainer+'px)');
+        const nosesMql: MediaQueryList = window.matchMedia('(min-width:'+this.noseContainer+'px)');
         
         
 
@@ -86,6 +88,7 @@ export class AppComponent {
         this.teamsPosition = teamsMql.matches ? 'center' : 'flex-start';
         this.eyesPosition = eyesMql.matches ? 'center' : 'flex-start';
         this.eyebrowsPosition = eyebrowsMql.matches ? 'center' : 'flex-start';
+        this.nosesPosition = nosesMql.matches ? 'center' : 'flex-start';
 
 
 
@@ -121,10 +124,17 @@ export class AppComponent {
         });
         
 
-        // eye options
+        // eyebrows options
         eyebrowsMql.addListener((eyebrowsMql: MediaQueryList) => {
             zone.run( () => { 
                 this.eyebrowsPosition= eyebrowsMql.matches ? 'center' : 'flex-start';
+            });
+        });
+
+        // eyebrows options
+        nosesMql.addListener((nosesMql: MediaQueryList) => {
+            zone.run( () => { 
+                this.nosesPosition= nosesMql.matches ? 'center' : 'flex-start';
             });
         });
 

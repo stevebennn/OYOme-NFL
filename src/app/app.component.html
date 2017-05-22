@@ -205,18 +205,23 @@
                     [class.active]="activeEyebrows == eyebrow"></button>              
                 </div>
             </div>
+            
             <!--NOSE OPTIONS-->
-            <!--<div
-            class="bottom-option-bar-inner"
+            <div
+            class="bottom-option-bar"
             [class.hidden]="activeStep !== 'noses' "
-            [ngStyle]="{'min-width.px': noseContainer }">
-                <button
-                class="bottom-bar-item nose btn btn-shadow"
-                *ngFor="let nose of noseOpts"
-                (click)="changeNose(nose)"
-                [ngStyle]="{'background-image': 'url(assets/img/noses/nose_' + nose + '.svg)' }"
-                [class.active]="activeNose == nose"></button>
-            </div>-->
+            [style.justifyContent]="nosesPosition">
+                <div
+                class="bottom-option-bar-inner"
+                [ngStyle]="{'min-width.px': noseContainer }">
+                    <button
+                    class="bottom-bar-item nose btn btn-shadow"
+                    *ngFor="let nose of noseOpts"
+                    (click)="changeNose(nose)"
+                    [ngStyle]="{'background-image': 'url(assets/img/noses/nose_' + nose + '.svg)' }"
+                    [class.active]="activeNose == nose"></button>
+                </div>
+            </div>
 
             <!--MOUTH OPTIONS-->
             <!--<div
