@@ -66,6 +66,7 @@ export class AppComponent {
     public eyesPosition: string = 'flex-start';
     public eyebrowsPosition: string = 'flex-start';
     public nosesPosition: string = 'flex-start';
+    public mouthsPosition: string = 'flex-start';
 
 
 
@@ -78,6 +79,7 @@ export class AppComponent {
         const eyesMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyesContainer+'px)');
         const eyebrowsMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyebrowContainer+'px)');
         const nosesMql: MediaQueryList = window.matchMedia('(min-width:'+this.noseContainer+'px)');
+        const mouthsMql: MediaQueryList = window.matchMedia('(min-width:'+this.mouthContainer+'px)');
         
         
 
@@ -89,6 +91,7 @@ export class AppComponent {
         this.eyesPosition = eyesMql.matches ? 'center' : 'flex-start';
         this.eyebrowsPosition = eyebrowsMql.matches ? 'center' : 'flex-start';
         this.nosesPosition = nosesMql.matches ? 'center' : 'flex-start';
+        this.mouthsPosition = mouthsMql.matches ? 'center' : 'flex-start';
 
 
 
@@ -131,7 +134,8 @@ export class AppComponent {
             });
         });
 
-        // eyebrows options
+
+        // nose options
         nosesMql.addListener((nosesMql: MediaQueryList) => {
             zone.run( () => { 
                 this.nosesPosition= nosesMql.matches ? 'center' : 'flex-start';
@@ -139,6 +143,12 @@ export class AppComponent {
         });
 
 
+        // nose options
+        mouthsMql.addListener((mouthsMql: MediaQueryList) => {
+            zone.run( () => { 
+                this.mouthsPosition= mouthsMql.matches ? 'center' : 'flex-start';
+            });
+        });
 
     }
 

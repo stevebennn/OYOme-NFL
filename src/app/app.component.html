@@ -223,19 +223,23 @@
                 </div>
             </div>
 
-            <!--MOUTH OPTIONS-->
-            <!--<div
-            class="bottom-option-bar-inner"
-            [class.hidden]="activeStep !== 'mouths' "
-            [ngStyle]="{'min-width.px': mouthContainer }">
-                <button
-                class="bottom-bar-item mouth btn btn-shadow"
-                *ngFor="let mouth of mouthOpts"
-                (click)="changeMouth(mouth)"
-                [ngStyle]="{'background-image': 'url(assets/img/mouths/mouth_' + mouth + '.svg)' }"
-                [class.active]="activeMouth == mouth"></button>
-            </div>            -->
 
+            <!--MOUTH OPTIONS-->
+            <div
+            class="bottom-option-bar"
+            [class.hidden]="activeStep !== 'mouths' "
+            [style.justifyContent]="mouthsPosition">
+                <div
+                class="bottom-option-bar-inner"
+                [ngStyle]="{'min-width.px': mouthContainer }">
+                    <button
+                    class="bottom-bar-item mouth btn btn-shadow"
+                    *ngFor="let mouth of mouthOpts"
+                    (click)="changeMouth(mouth)"
+                    [ngStyle]="{'background-image': 'url(assets/img/mouths/mouth_' + mouth + '.svg)' }"
+                    [class.active]="activeMouth == mouth"></button>
+                </div>            
+            </div>
             <!--BEARD OPTIONS-->
             <!--<div
             class="bottom-option-bar-inner"
