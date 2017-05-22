@@ -190,18 +190,21 @@
             </div>
 
             <!--EYEBROW OPTIONS-->
-            <!--<div 
-            class="bottom-option-bar-inner"
+            <div
+            class="bottom-option-bar"
             [class.hidden]="activeStep !== 'eyebrows' "
-            [ngStyle]="{'min-width.px': eyebrowContainer }">
-                <button
-                class="bottom-bar-item eyebrows btn btn-shadow"
-                *ngFor="let eyebrow of eyebrowOpts"
-                (click)="changeEyebrow(eyebrow)"
-                [ngStyle]="{'background-image': 'url(assets/img/eyebrows/eyebrows_' + eyebrow + '_blk.svg)' }"
-                [class.active]="activeEyebrows == eyebrow"></button>              
-            </div>-->
-
+            [style.justifyContent]="eyebrowsPosition">
+                <div 
+                class="bottom-option-bar-inner"
+                [ngStyle]="{'min-width.px': eyebrowContainer }">
+                    <button
+                    class="bottom-bar-item eyebrows btn btn-shadow"
+                    *ngFor="let eyebrow of eyebrowOpts"
+                    (click)="changeEyebrow(eyebrow)"
+                    [ngStyle]="{'background-image': 'url(assets/img/eyebrows/eyebrows_' + eyebrow + '_blk.svg)' }"
+                    [class.active]="activeEyebrows == eyebrow"></button>              
+                </div>
+            </div>
             <!--NOSE OPTIONS-->
             <!--<div
             class="bottom-option-bar-inner"
