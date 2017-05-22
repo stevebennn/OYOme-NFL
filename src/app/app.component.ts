@@ -67,6 +67,7 @@ export class AppComponent {
     public eyebrowsPosition: string = 'flex-start';
     public nosesPosition: string = 'flex-start';
     public mouthsPosition: string = 'flex-start';
+    public beardsPosition: string = 'flex-start';
 
 
     constructor(private stepsService: StepsService, zone: NgZone) {
@@ -79,6 +80,7 @@ export class AppComponent {
         const eyebrowsMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyebrowContainer+'px)');
         const nosesMql: MediaQueryList = window.matchMedia('(min-width:'+this.noseContainer+'px)');
         const mouthsMql: MediaQueryList = window.matchMedia('(min-width:'+this.mouthContainer+'px)');
+        const beardsMql: MediaQueryList = window.matchMedia('(min-width:'+this.beardContainer+'px)');
         
         
 
@@ -91,6 +93,7 @@ export class AppComponent {
         this.eyebrowsPosition = eyebrowsMql.matches ? 'center' : 'flex-start';
         this.nosesPosition = nosesMql.matches ? 'center' : 'flex-start';
         this.mouthsPosition = mouthsMql.matches ? 'center' : 'flex-start';
+        this.beardsPosition = beardsMql.matches ? 'center' : 'flex-start';
 
 
 
@@ -141,10 +144,17 @@ export class AppComponent {
         });
 
 
-        // nose options
+        // mouth options
         mouthsMql.addListener((mouthsMql: MediaQueryList) => {
             zone.run( () => { 
                 this.mouthsPosition= mouthsMql.matches ? 'center' : 'flex-start';
+            });
+        });
+
+        // beard options
+        beardsMql.addListener((beardsMql: MediaQueryList) => {
+            zone.run( () => { 
+                this.beardsPosition= beardsMql.matches ? 'center' : 'flex-start';
             });
         });
 
