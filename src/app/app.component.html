@@ -134,51 +134,63 @@
 
     <!-- BOTTOM OPTION BAR -->
         <section>
-        <div class="bottom-option-bar">
-        
+            
+            
             <!--SKINTONE OPTIONS-->
             <div
-            class="bottom-option-bar-inner"
-            [class.hidden]="activeStep !== 'skintone' "
-            [ngStyle]="{'min-width.px': skintoneContainer }">
-                <button
-                class="bottom-bar-item color btn btn-shadow"
-                *ngFor="let skintone of skintoneOpts"
-                [ngStyle]="{'background-color': skintone.hex }"
-                (click)="changeSkintone(skintone.name)"
-                [class.active]="activeSkintone == skintone.name "></button>
+            class="bottom-option-bar"
+            [style.justifyContent]="skintonePosition"
+            [class.hidden]="activeStep !== 'skintone' ">
+                <div
+                class="bottom-option-bar-inner"
+                [ngStyle]="{'min-width.px': skintoneContainer }">
+                    <button
+                    class="bottom-bar-item color btn btn-shadow"
+                    *ngFor="let skintone of skintoneOpts"
+                    [ngStyle]="{'background-color': skintone.hex }"
+                    (click)="changeSkintone(skintone.name)"
+                    [class.active]="activeSkintone == skintone.name "></button>
+                </div> 
             </div>
 
+    
             <!--TEAM OPTIONS-->
             <div
-            [style.justifyContent]="teamsPosition"
-            class="bottom-option-bar-inner"
+            class="bottom-option-bar"
             [class.hidden]="activeStep !== 'team' "
-            [ngStyle]="{'min-width.px': teamContainer }">
-                <button
-                class="bottom-bar-item logo btn btn-shadow"
-                *ngFor="let team of teamOpts"
-                (click)="changeTeam(team.name)"
-                [ngStyle]="{'background-image': 'url(assets/img/logos/' + team.name + '.png)' }"
-                [class.active]="activeTeam == team.name"
-                ></button>
+            [style.justifyContent]="teamsPosition">
+                <div
+                class="bottom-option-bar-inner"
+                [ngStyle]="{'min-width.px': teamContainer }">
+                    <button
+                    class="bottom-bar-item logo btn btn-shadow"
+                    *ngFor="let team of teamOpts"
+                    (click)="changeTeam(team.name)"
+                    [ngStyle]="{'background-image': 'url(assets/img/logos/' + team.name + '.png)' }"
+                    [class.active]="activeTeam == team.name"
+                    ></button>
+                </div>
             </div>
 
             <!--EYE OPTIONS-->
             <div
-            class="bottom-option-bar-inner"
+            class="bottom-option-bar"
             [class.hidden]="activeStep !== 'eyes' "
-            [ngStyle]="{'min-width.px': eyesContainer }">
-                <button
-                class="bottom-bar-item eyes btn btn-shadow"
-                *ngFor="let eye of eyesOpts"
-                (click)="changeEyes(eye)"
-                [ngStyle]="{'background-image': 'url(assets/img/eyes/eyes_' + eye + '.svg)' }"
-                [class.active]="activeEyes == eye"></button>              
+            [style.justifyContent]="eyesPosition">
+                <div
+                class="bottom-option-bar-inner"
+                [ngStyle]="{'min-width.px': eyesContainer }">
+                    <button
+                    class="bottom-bar-item eyes btn btn-shadow"
+                    *ngFor="let eye of eyesOpts"
+                    (click)="changeEyes(eye)"
+                    [ngStyle]="{'background-image': 'url(assets/img/eyes/eyes_' + eye + '.svg)' }"
+                    [class.active]="activeEyes == eye"></button>              
+                </div>
             </div>
 
             <!--EYEBROW OPTIONS-->
-            <div 
+            <!--<div 
             class="bottom-option-bar-inner"
             [class.hidden]="activeStep !== 'eyebrows' "
             [ngStyle]="{'min-width.px': eyebrowContainer }">
@@ -188,10 +200,10 @@
                 (click)="changeEyebrow(eyebrow)"
                 [ngStyle]="{'background-image': 'url(assets/img/eyebrows/eyebrows_' + eyebrow + '_blk.svg)' }"
                 [class.active]="activeEyebrows == eyebrow"></button>              
-            </div>
+            </div>-->
 
             <!--NOSE OPTIONS-->
-            <div
+            <!--<div
             class="bottom-option-bar-inner"
             [class.hidden]="activeStep !== 'noses' "
             [ngStyle]="{'min-width.px': noseContainer }">
@@ -201,10 +213,10 @@
                 (click)="changeNose(nose)"
                 [ngStyle]="{'background-image': 'url(assets/img/noses/nose_' + nose + '.svg)' }"
                 [class.active]="activeNose == nose"></button>
-            </div>
+            </div>-->
 
             <!--MOUTH OPTIONS-->
-            <div
+            <!--<div
             class="bottom-option-bar-inner"
             [class.hidden]="activeStep !== 'mouths' "
             [ngStyle]="{'min-width.px': mouthContainer }">
@@ -214,10 +226,10 @@
                 (click)="changeMouth(mouth)"
                 [ngStyle]="{'background-image': 'url(assets/img/mouths/mouth_' + mouth + '.svg)' }"
                 [class.active]="activeMouth == mouth"></button>
-            </div>            
+            </div>            -->
 
             <!--BEARD OPTIONS-->
-            <div
+            <!--<div
             class="bottom-option-bar-inner"
             [class.hidden]="activeStep !== 'beards' "
             [ngStyle]="{'min-width.px': beardContainer }">
@@ -227,9 +239,9 @@
                 (click)="changeBeard(beard)"
                 [ngStyle]="{'background-image': 'url(assets/img/beards/beard_' + beard + '_blk.svg)' }"
                 [class.active]="activeBeard == beard"></button>
-            </div>  
+            </div>  -->
 
-        </div>
+        <!--</div>-->
         </section>
 
     <!-- BOTTOM NAVIGATION BAR -->

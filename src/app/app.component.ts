@@ -58,38 +58,64 @@ export class AppComponent {
     
     // setting variables
     public stepsPosition: string = 'flex-start';
+    public skintonePosition: string = 'flex-start';
     public teamsPosition: string = 'flex-start';
+    public eyesPosition: string = 'flex-start';
 
     constructor(private stepsService: StepsService, zone: NgZone) {
 
         // setting each media query
         const stepsMql: MediaQueryList = window.matchMedia('(min-width:'+this.stepsContainer+'px)');
-        const teamsMql: MediaQueryList = window.matchMedia('(min-width:'+this.teamContainer+'px)');
         const skintoneMql: MediaQueryList = window.matchMedia('(min-width:'+this.skintoneContainer+'px)');
+        const teamsMql: MediaQueryList = window.matchMedia('(min-width:'+this.teamContainer+'px)');
         const eyesMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyesContainer+'px)');
-        const eyebrowsMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyebrowContainer+'px)');
+        // const teamsMql: MediaQueryList = window.matchMedia('(min-width:'+this.teamContainer+'px)');
+        // const eyesMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyesContainer+'px)');
+        // const eyebrowsMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyebrowContainer+'px)');
         
         
         // set the position based on viewport at loadtime
         this.stepsPosition = stepsMql.matches ? 'center' : 'flex-start';
-        this.teamsPosition = stepsMql.matches ? 'center' : 'flex-start';
+        this.skintonePosition = skintoneMql.matches ? 'center' : 'flex-start';
+        this.teamsPosition = teamsMql.matches ? 'center' : 'flex-start';
+        this.eyesPosition = eyesMql.matches ? 'center' : 'flex-start';
 
 
 
 
 
+
+        // bottom bar steps
         stepsMql.addListener((stepsMql: MediaQueryList) => {
             zone.run( () => { 
                 this.stepsPosition = stepsMql.matches ? 'center' : 'flex-start';
             });
         });
 
-        teamsMql.addListener((stepsMql: MediaQueryList) => {
+
+        // team options
+        teamsMql.addListener((teamsMql: MediaQueryList) => {
             zone.run( () => { 
-                this.teamsPosition= stepsMql.matches ? 'center' : 'flex-start';
+                this.teamsPosition= teamsMql.matches ? 'center' : 'flex-start';
+            });
+        });
+
+
+        // skintone options
+        skintoneMql.addListener((skinetoneMql: MediaQueryList) => {
+            zone.run( () => { 
+                this.skintonePosition= skintoneMql.matches ? 'center' : 'flex-start';
+            });
+        });
+
+        // skintone options
+        eyesMql.addListener((eyesMql: MediaQueryList) => {
+            zone.run( () => { 
+                this.eyesPosition= eyesMql.matches ? 'center' : 'flex-start';
             });
         });
         
+
     }
 
 
