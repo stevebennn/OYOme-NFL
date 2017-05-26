@@ -9,6 +9,8 @@ import { StepsService } from './steps.service';
 import { FigureComponent } from './figure/figure.component';
 import { FigureFeatureViewComponent } from './figure-feature-view/figure-feature-view.component';
 
+import { DataModelService } from './data-model.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,7 @@ import { FigureFeatureViewComponent } from './figure-feature-view/figure-feature
     FormsModule,
     HttpModule
   ],
-  providers: [StepsService],
+  providers: [StepsService,DataModelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
