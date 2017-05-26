@@ -25,4 +25,11 @@ import { DataModelService } from './data-model.service';
   providers: [StepsService,DataModelService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+    constructor(private dataModelService: DataModelService) {
+        if(!window.localStorage.getItem('model')) {
+            this.dataModelService.setInitialState(this.dataModelService.initialState)  
+        }
+    }
+  
+ }

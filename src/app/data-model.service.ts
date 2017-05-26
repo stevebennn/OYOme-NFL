@@ -28,13 +28,27 @@ export class DataModelService {
         name: 'LAST NAME',
         number: 14,
         position: 'CA',
-    }
+    };
 
     initialState = this.model;
 
+
     setInitialState(model) {
-        window.localStorage.setItem('model',model)
+        window.localStorage.setItem('model',JSON.stringify(model))
     }
 
+    getState() {
+        return JSON.parse(window.localStorage.getItem('model'));
+    }
+
+    setModel(model) {
+        return this.setInitialState(model);
+    }
+
+    reset() {
+        return this.setInitialState(this.model);
+    }
+
+    
 
 }

@@ -2,6 +2,8 @@ import { Component, Input, OnInit, NgZone } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StepsService } from './steps.service';
 
+import { DataModelService } from './data-model.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,60 +13,8 @@ export class AppComponent {
   
     // if this is the first visit...it will set the model
     ngOnInit() {
-        if( window.localStorage.getItem('version') !== "0.6" ) {
-            // sets first load model
-
-            this.model = this.model
-
-            this.activeSkintone = '002';
-            this.activeTeam = 'nflari';
-            this.activeJerseyNumber = "14";
-            this.activeMouth = '006';
-            this.activeMouthAccessory = '000';
-            this.activeNose = '004';
-            this.activeEyebrows = '005';
-            this.activeEyebrowColor = '4625';
-            this.activeHairStyle = 'null';
-            this.activeHairColor = '4625';
-            this.activeBeard = '000';
-            this.activeBeardColor = 'blk';
-            this.activeEyes = "001";
-            this.activeNoseAccessory = "000";
-            this.activeEyeAccessory = "005";
-            this.activePackage = "001";
-            this.activePrimaryText = "Your Name";
-            this.activeSecondaryText = "Your Message!";
-
-            // in the case they only make the torso...then leave.
-            // this sets the model to memory as well...
-            window.localStorage.setItem('version','0.6'); // this is for asset updates
-            window.localStorage.setItem('skintone',this.activeSkintone);
-            window.localStorage.setItem('team',this.activeTeam);
-            window.localStorage.setItem('jerseyNumber',this.activeJerseyNumber);
-            window.localStorage.setItem('mouthAccessory',this.activeMouthAccessory);
-            window.localStorage.setItem('nose','004');
-            window.localStorage.setItem('mouth',this.activeMouth);
-            window.localStorage.setItem('eyebrows',this.activeEyebrows);
-            window.localStorage.setItem('eyebrowColor','4625');
-            window.localStorage.setItem('hairStyle','null');
-            window.localStorage.setItem('hairColor',this.activeHairColor);
-            window.localStorage.setItem('beard','000');
-            window.localStorage.setItem('beardColor','blk');
-            window.localStorage.setItem('eyes','001');
-            window.localStorage.setItem('noseAccessory','000');
-            window.localStorage.setItem('eyeAccessory',this.activeEyeAccessory);
-            window.localStorage.setItem('package','001');
-            window.localStorage.setItem('primaryText','Your Name!');
-            window.localStorage.setItem('secondaryText','Your Message!');
-
-
-            window.localStorage.setItem('model',JSON.stringify(this.model));
-
-        }
+        
     }
-
-
-
 
     // setting variables
     public stepsPosition: string = 'flex-start';
@@ -76,8 +26,10 @@ export class AppComponent {
     public mouthsPosition: string = 'flex-start';
     public beardsPosition: string = 'flex-start';
 
-
-    constructor(private stepsService: StepsService, zone: NgZone) {
+    constructor(
+        private stepsService: StepsService,
+        private zone: NgZone,
+        private dataModel: DataModelService) {
 
         // setting each media query
         const stepsMql: MediaQueryList = window.matchMedia('(min-width:'+this.stepsContainer+'px)');
@@ -89,9 +41,6 @@ export class AppComponent {
         const mouthsMql: MediaQueryList = window.matchMedia('(min-width:'+this.mouthContainer+'px)');
         const beardsMql: MediaQueryList = window.matchMedia('(min-width:'+this.beardContainer+'px)');
         
-        
-
-
         // set the position based on viewport at loadtime
         this.stepsPosition = stepsMql.matches ? 'center' : 'flex-start';
         this.skintonePosition = skintoneMql.matches ? 'center' : 'flex-start';
@@ -102,8 +51,6 @@ export class AppComponent {
         this.mouthsPosition = mouthsMql.matches ? 'center' : 'flex-start';
         this.beardsPosition = beardsMql.matches ? 'center' : 'flex-start';
 
-
-
         // bottom bar steps
         stepsMql.addListener((stepsMql: MediaQueryList) => {
             zone.run( () => { 
@@ -111,14 +58,12 @@ export class AppComponent {
             });
         });
 
-
         // team options
         teamsMql.addListener((teamsMql: MediaQueryList) => {
             zone.run( () => { 
                 this.teamsPosition= teamsMql.matches ? 'center' : 'flex-start';
             });
         });
-
 
         // skintone options
         skintoneMql.addListener((skinetoneMql: MediaQueryList) => {
@@ -133,7 +78,6 @@ export class AppComponent {
                 this.eyesPosition= eyesMql.matches ? 'center' : 'flex-start';
             });
         });
-        
 
         // eyebrows options
         eyebrowsMql.addListener((eyebrowsMql: MediaQueryList) => {
@@ -142,14 +86,12 @@ export class AppComponent {
             });
         });
 
-
         // nose options
         nosesMql.addListener((nosesMql: MediaQueryList) => {
             zone.run( () => { 
                 this.nosesPosition= nosesMql.matches ? 'center' : 'flex-start';
             });
         });
-
 
         // mouth options
         mouthsMql.addListener((mouthsMql: MediaQueryList) => {
@@ -165,33 +107,6 @@ export class AppComponent {
             });
         });
 
-    }
-
-
-
-
-    model = {
-        team: 'nflari',
-        skintone: '002',
-        face: {
-            eyes: '001',
-            eyeAccessory: '005',
-            eyebrows: '001',
-            eyebrowColor: '4625',
-            nose: '007',
-            noseAccessory: '002',
-            mouth: '007',
-            mouthAccessory: '002',
-            beard: '007',
-            beardColor: '4625'
-        },
-        fullname: 'Your Name',
-        gender: 'male',
-        handedness: 'right',
-        league: 'MLB',
-        name: 'LAST NAME',
-        number: 14,
-        position: 'CA',
     }
 
     // Application default values
@@ -226,27 +141,21 @@ export class AppComponent {
 
     stepsContainer = this.steps.length * 60;
 
+    model = this.dataModel.getState();
 
-    activeSkintone = window.localStorage.getItem('skintone');
-    activeTeam = window.localStorage.getItem('team');
-    activeJerseyNumber = window.localStorage.getItem('jerseyNumber');
-    activeMouth = window.localStorage.getItem('mouth');
-    activeNose = window.localStorage.getItem('nose');
-    activeEyebrows = window.localStorage.getItem('eyebrows');
-    activeEyebrowColor = window.localStorage.getItem('eyebrowColor');
-    activeHairStyle = window.localStorage.getItem('hairStyle');
-    activeHairColor = window.localStorage.getItem('hairColor');
-    activeMouthAccessory = window.localStorage.getItem('mouthAccessory');
-    activeBeard = window.localStorage.getItem('beard');
-    activeBeardColor = window.localStorage.getItem('beardColor');
-    activeEyes = window.localStorage.getItem('eyes');
-    activeNoseAccessory = window.localStorage.getItem('noseAccessory');
-    activeEyeAccessory = window.localStorage.getItem('eyeAccessory');
-    activePackage = window.localStorage.getItem('package');
-    activePrimaryText = window.localStorage.getItem('primaryText');
-    activeSecondaryText = window.localStorage.getItem('secondaryText');
-
-
+    activeSkintone = this.model.skintone;
+    activeTeam = this.model.team;
+    activeJerseyNumber = this.model.number;
+    activeMouth = this.model.face.mouth;
+    activeNose = this.model.face.nose;
+    activeEyebrows = this.model.face.eyebrows;
+    activeEyebrowColor = this.model.face.eyebrowColor;
+    activeMouthAccessory = this.model.face.mouthAccessory;
+    activeBeard = this.model.face.beard;
+    activeBeardColor = this.model.face.beardColor;
+    activeEyes = this.model.face.eyes;
+    activeNoseAccessory = this.model.face.noseAccessory;
+    activeEyeAccessory = this.model.face.eyeAccessory;
 
     changeStep(step) {
         if(step == "team" || step == "skintone") {
@@ -259,6 +168,9 @@ export class AppComponent {
         this.activeStep = step;
     }
 
+    resetChanges() {
+        this.model = this.dataModel.model;
+    }
 
     toggleStepLevel(stepLevel) {
         switch(stepLevel) {
@@ -272,42 +184,38 @@ export class AppComponent {
 
     changeSkintone(color) {
         this.activeSkintone = color;
-        window.localStorage.setItem('skintone',color);
+        this.model.skintone = color;
+        this.dataModel.setModel(this.model);
     }
 
     changeTeam(team) {
         this.activeTeam = team;
-        window.localStorage.setItem('team',team);
+        this.model.team = team;
+        this.dataModel.setModel(this.model);
     }
 
     changeMouth(mouth) {
         this.activeMouth = mouth;
-        window.localStorage.setItem('mouth',mouth);
+        this.model.face.mouth = mouth;
+        this.dataModel.setModel(this.model);
     }
 
     changeNose(nose) {
         this.activeNose = nose;
-        window.localStorage.setItem('nose',nose);
+        this.model.face.nose = nose;
+        this.dataModel.setModel(this.model);
     }
 
     changeEyebrow(eyebrow) {
         this.activeEyebrows = eyebrow;
-        window.localStorage.setItem('eyebrows', eyebrow);
+        this.model.face.eyebrows = eyebrow;
+        this.dataModel.setModel(this.model);
     }
 
     changeEyebrowColor(color) {
         this.activeEyebrowColor = color;
-        window.localStorage.setItem('eyebrowColor',color);
-    }
-
-    changeHairStyle(hairStyle) {
-        this.activeHairStyle = hairStyle;
-        window.localStorage.setItem('hairStyle',hairStyle);
-    }
-
-    changeHairColor(color) {
-        this.activeHairColor = color;
-        window.localStorage.setItem('hairColor',color);
+        this.model.face.eyebrowColor = color;
+        this.dataModel.setModel(this.model);
     }
 
     changeMouthAccessory(accessory) {
@@ -339,21 +247,6 @@ export class AppComponent {
     changeEyeAccessory(acc) {
         this.activeEyeAccessory = acc;
         window.localStorage.setItem('eyeAccessory',acc);
-    }
-
-    changePackage(packaging) {
-        this.activePackage = packaging;
-        window.localStorage.setItem('package', packaging);
-    }
-
-    updatePrimaryText(text) {
-        this.activePrimaryText = text;
-        window.localStorage.setItem('primaryText', text);
-    }
-
-    updateSecondaryText(text) {
-        this.activeSecondaryText = text;
-        window.localStorage.setItem('secondaryText', text);
     }
 
 }
