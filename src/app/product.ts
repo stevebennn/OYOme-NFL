@@ -1,21 +1,17 @@
 import { productModel } from './product.model';
 
-const t = JSON.parse(window.localStorage.getItem('model'));
-
-const pushToStorage = (model) => {
-    window.localStorage.setItem('model',JSON.stringify(model));
-}
+const prod = productModel;
 
 export const product = (
     
-    state = t, action) => {
+    state = prod, action) => {
 
     switch(action.type) {
 
         case "UPDATE_FIGURE":
-            let obj = Object.assign({},state);
+            let obj = Object.assign({},prod);
             obj[action.payload[0]] = action.payload[1];
-            pushToStorage(obj);
+            console.log(obj)
             return obj
         
         default: 

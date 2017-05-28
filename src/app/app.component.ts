@@ -4,8 +4,6 @@ import { StepsService } from './steps.service';
 
 import {Store,provideStore} from '@ngrx/store';
 
-import { productModel } from './product.model';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,6 +22,7 @@ export class AppComponent {
     public mouthsPosition: string = 'flex-start';
     public beardsPosition: string = 'flex-start';
 
+    product: any;
 
     constructor(
         private stepsService: StepsService,
@@ -119,31 +118,14 @@ export class AppComponent {
             });
         });
 
-        // if(!window.localStorage.getItem('model')) {
-        //     this.product = productModel;
-        // }
+
         this._store.select('product')
-        .subscribe(product => {
-            this.product = product;
-        })
+            .subscribe(product => {
+                this.product = product;
+            });
 
 
     }
-
-
-    // if this is the first visit...it will set the model
-    ngOnInit() {
-
-        // this.product = productModel;
-
-        // if(!window.localStorage.getItem('model')) {
-        //     console.log(this.product);
-        // }
-
-    }
-
-
-
 
     // Application default values
     activeStep = "skintone";
@@ -220,9 +202,6 @@ export class AppComponent {
                 return this.stepLevel = 'figure';
         }
     }
-
-
-    product: any;
     
     changeSkintone(color) {
         this._store.dispatch({type: 'UPDATE_FIGURE',payload:['skintone',color] })
