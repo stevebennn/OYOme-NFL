@@ -4,6 +4,8 @@ import { StepsService } from './steps.service';
 
 import {Store,provideStore} from '@ngrx/store';
 
+import { productModel } from './product.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,59 +13,6 @@ import {Store,provideStore} from '@ngrx/store';
 })
 export class AppComponent {
   
-    // if this is the first visit...it will set the model
-    ngOnInit() {
-        if( window.localStorage.getItem('version') !== "0.6" ) {
-            // sets first load model
-
-            // // this.activeSkintone = '002';
-            // this.activeTeam = 'nflari';
-            // this.activeJerseyNumber = "14";
-            // this.activeMouth = '006';
-            // this.activeMouthAccessory = '000';
-            // this.activeNose = '004';
-            // this.activeEyebrows = '005';
-            // this.activeEyebrowColor = '4625';
-            // this.activeHairStyle = 'null';
-            // this.activeHairColor = '4625';
-            // this.activeBeard = '000';
-            // this.activeBeardColor = 'blk';
-            // this.activeEyes = "001";
-            // this.activeNoseAccessory = "000";
-            // this.activeEyeAccessory = "005";
-            // this.activePackage = "001";
-            // this.activePrimaryText = "Your Name";
-            // this.activeSecondaryText = "Your Message!";
-
-            // // in the case they only make the torso...then leave.
-            // // this sets the model to memory as well...
-            // window.localStorage.setItem('version','0.6'); // this is for asset updates
-            // window.localStorage.setItem('team',this.activeTeam);
-            // window.localStorage.setItem('jerseyNumber',this.activeJerseyNumber);
-            // window.localStorage.setItem('mouthAccessory',this.activeMouthAccessory);
-            // window.localStorage.setItem('nose','004');
-            // window.localStorage.setItem('mouth',this.activeMouth);
-            // window.localStorage.setItem('eyebrows',this.activeEyebrows);
-            // window.localStorage.setItem('eyebrowColor','4625');
-            // window.localStorage.setItem('hairStyle','null');
-            // window.localStorage.setItem('hairColor',this.activeHairColor);
-            // window.localStorage.setItem('beard','000');
-            // window.localStorage.setItem('beardColor','blk');
-            // window.localStorage.setItem('eyes','001');
-            // window.localStorage.setItem('noseAccessory','000');
-            // window.localStorage.setItem('eyeAccessory',this.activeEyeAccessory);
-            // window.localStorage.setItem('package','001');
-            // window.localStorage.setItem('primaryText','Your Name!');
-            // window.localStorage.setItem('secondaryText','Your Message!');
-
-
-            // window.localStorage.setItem('model',JSON.stringify(this.model));
-
-        }
-    }
-
-
-
 
     // setting variables
     public stepsPosition: string = 'flex-start';
@@ -170,14 +119,30 @@ export class AppComponent {
             });
         });
 
-
-    _store.select('product')
+        // if(!window.localStorage.getItem('model')) {
+        //     this.product = productModel;
+        // }
+        this._store.select('product')
         .subscribe(product => {
             this.product = product;
         })
 
 
     }
+
+
+    // if this is the first visit...it will set the model
+    ngOnInit() {
+
+        // this.product = productModel;
+
+        // if(!window.localStorage.getItem('model')) {
+        //     console.log(this.product);
+        // }
+
+    }
+
+
 
 
     // Application default values

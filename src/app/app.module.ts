@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -30,11 +30,14 @@ import { product } from './product';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+    // product: any;
+    constructor(private _store : Store<any>) {
+      if(window.localStorage.length < 1) {
+        window.localStorage.setItem('model', JSON.stringify(productModel));
+      }
+    }
 
-    constructor() {
-        if(!window.localStorage.getItem('model') ) {
-            window.localStorage.setItem('model', JSON.stringify(productModel));
-        }
+    onInit() {
     }
 
  }

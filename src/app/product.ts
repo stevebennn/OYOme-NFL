@@ -13,7 +13,7 @@ export const product = (
     switch(action.type) {
 
         case "UPDATE_FIGURE":
-            let obj = Object.assign({},t);
+            let obj = Object.assign({},state);
             obj[action.payload[0]] = action.payload[1];
             pushToStorage(obj);
             return obj

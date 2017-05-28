@@ -1,5 +1,5 @@
 
-    <div class="container">
+    <div class="container" *ngIf="product">
         <header>
             <div class="top-bar">
                 <div class="top-bar-wrapper">
@@ -18,36 +18,34 @@
                     <app-figure
                         skintone="{{product.skintone}}"
                         team="{{ product.team }}"
-                        eyes="{{ activeEyes }}"
-                        eyeAccessory="{{ activeEyeAccessory }}"
-                        eyebrows="{{ activeEyebrows }}"
-                        eyebrowColor="{{ activeEyebrowColor }}"
-                        nose="{{ activeNose }}"
-                        hairColor="{{ activeHairColor }}"
-                        jerseyNumber="{{ activeJerseyNumber }}"
-                        noseAccessory="{{ activeNoseAccessory }}"
-                        mouth="{{ activeMouth }}"
-                        mouthAccessory="{{ activeMouthAccessory }}"
-                        beard="{{ activeBeard }}"
-                        beardColor="{{ activeBeardColor }}"></app-figure>
+                        eyes="{{ product.face.eyes }}"
+                        eyeAccessory="{{ product.face.eyeAccessory }}"
+                        eyebrows="{{ product.face.eyebrows }}"
+                        eyebrowColor="{{ product.face.eyebrowColor }}"
+                        nose="{{ product.face.nose }}"
+                        jerseyNumber="{{ product.number }}"
+                        noseAccessory="{{ product.face.noseAccessory }}"
+                        mouth="{{ product.face.mouth }}"
+                        mouthAccessory="{{ product.face.mouthAccessory }}"
+                        beard="{{ product.face.beard }}"
+                        beardColor="{{ product.face.beardColor }}"></app-figure>
                 </div>
 
                 <div [class.hidden]="stepLevel !== 'features' ">
                     <app-figure-feature-view
-                        skintone="{{activeSkintone}}"
-                        team="{{ activeTeam }}"
-                        eyes="{{ activeEyes }}"
-                        eyeAccessory="{{ activeEyeAccessory }}"
-                        eyebrows="{{ activeEyebrows }}"
-                        eyebrowColor="{{ activeEyebrowColor }}"
-                        nose="{{ activeNose }}"
-                        hairColor="{{ activeHairColor }}"
-                        jerseyNumber="{{ activeJerseyNumber }}"
-                        noseAccessory="{{ activeNoseAccessory }}"
-                        mouth="{{ activeMouth }}"
-                        mouthAccessory="{{ activeMouthAccessory }}"
-                        beard="{{ activeBeard }}"
-                        beardColor="{{ activeBeardColor }}"></app-figure-feature-view>
+                        skintone="{{product.skintone}}"
+                        team="{{ product.team }}"
+                        eyes="{{ product.face.eyes }}"
+                        eyeAccessory="{{ product.face.eyeAccessory }}"
+                        eyebrows="{{ product.face.eyebrows }}"
+                        eyebrowColor="{{ product.face.eyebrowColor }}"
+                        nose="{{ product.face.nose }}"
+                        jerseyNumber="{{ product.number }}"
+                        noseAccessory="{{ product.face.noseAccessory }}"
+                        mouth="{{ product.face.mouth }}"
+                        mouthAccessory="{{ product.face.mouthAccessory }}"
+                        beard="{{ product.face.beard }}"
+                        beardColor="{{ product.face.beardColor }}"></app-figure-feature-view>
                 </div>
 
 
@@ -276,7 +274,6 @@
                     <img src="assets/img/{{step.name}}.svg" alt="">
                  </button>
             </div>
-            {{ product.skintone }}
         </div>
     </section>
 
