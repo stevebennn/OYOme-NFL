@@ -16,8 +16,8 @@
 
                 <div [class.hidden]="stepLevel !== 'figure' ">
                     <app-figure
-                        skintone="{{activeSkintone}}"
-                        team="{{ activeTeam }}"
+                        skintone="{{product.skintone}}"
+                        team="{{ product.team }}"
                         eyes="{{ activeEyes }}"
                         eyeAccessory="{{ activeEyeAccessory }}"
                         eyebrows="{{ activeEyebrows }}"
@@ -276,6 +276,7 @@
                     <img src="assets/img/{{step.name}}.svg" alt="">
                  </button>
             </div>
+            {{ product.skintone }}
         </div>
     </section>
 
