@@ -11,7 +11,6 @@ import {Store,provideStore} from '@ngrx/store';
 })
 export class AppComponent {
   
-
     // setting variables
     public stepsPosition: string = 'flex-start';
     public skintonePosition: string = 'flex-start';
@@ -30,8 +29,6 @@ export class AppComponent {
         private _store : Store<any>
         ) {
 
-            
-
         // setting each media query
         const stepsMql: MediaQueryList = window.matchMedia('(min-width:'+this.stepsContainer+'px)');
         const skintoneMql: MediaQueryList = window.matchMedia('(min-width:'+this.skintoneContainer+'px)');
@@ -40,10 +37,7 @@ export class AppComponent {
         const eyebrowsMql: MediaQueryList = window.matchMedia('(min-width:'+this.eyebrowContainer+'px)');
         const nosesMql: MediaQueryList = window.matchMedia('(min-width:'+this.noseContainer+'px)');
         const mouthsMql: MediaQueryList = window.matchMedia('(min-width:'+this.mouthContainer+'px)');
-        const beardsMql: MediaQueryList = window.matchMedia('(min-width:'+this.beardContainer+'px)');
-        
-        
-
+        const beardsMql: MediaQueryList = window.matchMedia('(min-width:'+this.beardContainer+'px)');        
 
         // set the position based on viewport at loadtime
         this.stepsPosition = stepsMql.matches ? 'center' : 'flex-start';
@@ -54,8 +48,6 @@ export class AppComponent {
         this.nosesPosition = nosesMql.matches ? 'center' : 'flex-start';
         this.mouthsPosition = mouthsMql.matches ? 'center' : 'flex-start';
         this.beardsPosition = beardsMql.matches ? 'center' : 'flex-start';
-
-
 
         // bottom bar steps
         stepsMql.addListener((stepsMql: MediaQueryList) => {
@@ -118,13 +110,10 @@ export class AppComponent {
             });
         });
 
-
         this._store.select('product')
             .subscribe(product => {
                 this.product = product;
             });
-
-
     }
 
     // Application default values
@@ -156,29 +145,7 @@ export class AppComponent {
     packagingContainer = this.packagingOpts.length * 60;
     teamOpts = this.opts.teams;
     teamContainer = this.teamOpts.length * 60;
-
     stepsContainer = this.steps.length * 60;
-
-
-    // activeSkintone = window.localStorage.getItem('skintone');
-    // activeTeam = window.localStorage.getItem('team');
-    // activeJerseyNumber = window.localStorage.getItem('jerseyNumber');
-    // activeMouth = window.localStorage.getItem('mouth');
-    // activeNose = window.localStorage.getItem('nose');
-    // activeEyebrows = window.localStorage.getItem('eyebrows');
-    // activeEyebrowColor = window.localStorage.getItem('eyebrowColor');
-    // activeHairStyle = window.localStorage.getItem('hairStyle');
-    // activeHairColor = window.localStorage.getItem('hairColor');
-    // activeMouthAccessory = window.localStorage.getItem('mouthAccessory');
-    // activeBeard = window.localStorage.getItem('beard');
-    // activeBeardColor = window.localStorage.getItem('beardColor');
-    // activeEyes = window.localStorage.getItem('eyes');
-    // activeNoseAccessory = window.localStorage.getItem('noseAccessory');
-    // activeEyeAccessory = window.localStorage.getItem('eyeAccessory');
-    // activePackage = window.localStorage.getItem('package');
-    // activePrimaryText = window.localStorage.getItem('primaryText');
-    // activeSecondaryText = window.localStorage.getItem('secondaryText');
-
 
 
     changeStep(step) {
@@ -203,18 +170,14 @@ export class AppComponent {
         }
     }
     
-    changeSkintone(color) {
-        this._store.dispatch({type: 'UPDATE_FIGURE',payload:['skintone',color] })
+
+    updateFigure(key,val) {
+        this._store.dispatch({type: 'UPDATE_FIGURE',payload:[key,val] })
     }
 
-    changeTeam(team) {
-        this._store.dispatch({type: 'UPDATE_FIGURE',payload:['team',team] })
+    updateFace(key,val) {
+        this._store.dispatch({type: 'UPDATE_FACE',payload:[key,val] })
     }
-
-    // changeMouth(mouth) {
-    //     this.activeMouth = mouth;
-    //     window.localStorage.setItem('mouth',mouth);
-    // }
 
     // changeNose(nose) {
     //     this.activeNose = nose;

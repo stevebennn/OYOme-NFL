@@ -146,8 +146,8 @@
                     class="bottom-bar-item color btn btn-shadow"
                     *ngFor="let skintone of skintoneOpts"
                     [ngStyle]="{'background-color': skintone.hex }"
-                    (click)="changeSkintone(skintone.name)"
-                    [class.active]="activeSkintone == skintone.name "></button>
+                    (click)="updateFigure('skintone',skintone.name)"
+                    [class.active]="product.skintone == skintone.name "></button>
                 </div> 
             </div>
 
@@ -163,7 +163,7 @@
                     <button
                     class="bottom-bar-item logo btn btn-shadow"
                     *ngFor="let team of teamOpts"
-                    (click)="changeTeam(team.name)"
+                    (click)="updateFigure('team',team.name)"
                     [ngStyle]="{'background-image': 'url(assets/img/logos/' + team.name + '.png)' }"
                     [class.active]="activeTeam == team.name"
                     ></button>
@@ -181,7 +181,7 @@
                     <button
                     class="bottom-bar-item eyes btn btn-shadow"
                     *ngFor="let eye of eyesOpts"
-                    (click)="changeEyes(eye)"
+                    (click)="updateFace('eyes',eye)"
                     [ngStyle]="{'background-image': 'url(assets/img/eyes/eyes_' + eye + '.svg)' }"
                     [class.active]="activeEyes == eye"></button>              
                 </div>
