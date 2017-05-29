@@ -6,7 +6,7 @@ git checkout master
 git pull
 
 # run angular cli build command w/ AOT compilation
-ng build --prod --aot
+ng build --prod
 
 # clear out production directory
 rm -r ../OYOme-NFL_prod/*
