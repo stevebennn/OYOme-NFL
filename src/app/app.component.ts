@@ -117,7 +117,7 @@ export class AppComponent {
     }
 
     // Application default values
-    activeStep = "skintone";
+    activeStep = "team";
     stepLevel = "figure";
 
     steps = this.stepsService.steps;
@@ -174,6 +174,12 @@ export class AppComponent {
 
     updateFace(key,val) {
         this._store.dispatch({type: 'UPDATE_FACE',payload:[key,val] })
+    }
+
+    reset() {
+        this._store.dispatch({ type: 'RESET' })
+        this.activeStep = 'team';
+        this.stepLevel = 'figure';
     }
 
 }
