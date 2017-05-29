@@ -70,8 +70,8 @@
                     <button
                     class="side-bar-item btn btn-shadow"
                     *ngFor="let acc of eyeAccessoriesOpts"
-                    (click)="changeEyeAccessory(acc)"
-                    [class.active]="activeEyeAccessory == acc "
+                    (click)="updateFace('eyeAccessory',acc)"
+                    [class.active]="product.face.eyeAccessory == acc "
                     [ngStyle]="{'background-image': 'url(assets/img/eyes/acc_' + acc + '.svg)' }">
                     </button>
             </div>
@@ -82,8 +82,8 @@
                     <button
                     class="side-bar-item btn btn-shadow"
                     *ngFor="let color of hairColorOpts"
-                    (click)="changeEyebrowColor(color.name)"
-                    [class.active]="activeEyebrowColor == color.name "
+                    (click)="updateFace('eyebrowColor',color.name)"
+                    [class.active]="product.face.eyebrowColor == color.name "
                     [ngStyle]="{'background': color.hex }"
                     >
                     </button>
@@ -95,8 +95,8 @@
                     <button
                     class="side-bar-item btn btn-shadow nose-opts"
                     *ngFor="let opts of noseAccessoryOpts"
-                    (click)="changeNoseAccessory(opts)"
-                    [class.active]="activeNoseAccessory == opts "
+                    (click)="updateFace('noseAccessory',opts)"
+                    [class.active]="product.face.noseAccessory == opts "
                     [ngStyle]="{'background-image': 'url(assets/img/noses/acc_' + opts + '.svg)' }">
                     </button>
             </div>
@@ -107,8 +107,8 @@
                     <button
                     class="side-bar-item btn btn-shadow mouth-opts"
                     *ngFor="let opts of mouthAccessoriesOpts"
-                    (click)="changeMouthAccessory(opts)"
-                    [class.active]="activeMouthAccessory == opts "
+                    (click)="updateFace('mouthAccessory',opts)"
+                    [class.active]="product.face.mouthAccessory == opts "
                     [ngStyle]="{'background-image': 'url(assets/img/mouths/acc_' + opts + '.svg)' }">
                     </button>
             </div>
@@ -119,8 +119,8 @@
                     <button
                     class="side-bar-item btn btn-shadow"
                     *ngFor="let opts of hairColorOpts"
-                    (click)="changeBeardColor(opts.name)"
-                    [class.active]="activeBeardColor == opts.name "
+                    (click)="updateFace('beardColor',opts.name)"
+                    [class.active]="product.face.beardColor == opts.name "
                     [ngStyle]="{'background': opts.hex }">
                     </button>
             </div>
@@ -182,7 +182,7 @@
                     *ngFor="let eye of eyesOpts"
                     (click)="updateFace('eyes',eye)"
                     [ngStyle]="{'background-image': 'url(assets/img/eyes/eyes_' + eye + '.svg)' }"
-                    [class.active]="activeEyes == eye"></button>              
+                    [class.active]="product.face.eyes == eye"></button>              
                 </div>
             </div>
 
