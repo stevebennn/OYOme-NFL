@@ -7,25 +7,24 @@ const pushToStorage = (model) => {
     window.localStorage.setItem('model',JSON.stringify(model));
 }
 
-export const product = (
+export const product = ( state = t, action ) => {
     
-    state = t, action) => {
-
     switch(action.type) {
 
         case "UPDATE_FIGURE":
-            let obj = Object.assign({},state);
+            var obj = Object.assign({},state);
             obj[action.payload[0]] = action.payload[1];
             pushToStorage(obj);
             return obj
 
         case "UPDATE_FACE":
-            let _obj = Object.assign({},state);
-            _obj.face[action.payload[0]] = action.payload[1];
-            pushToStorage(_obj);
-            return _obj
+            var obj = Object.assign({},state);
+            obj.face[action.payload[0]] = action.payload[1];
+            pushToStorage(obj);
+            return obj
         
         default: 
             return state;
     }
+    
 }

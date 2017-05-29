@@ -147,11 +147,11 @@ export class AppComponent {
     teamContainer = this.teamOpts.length * 60;
     stepsContainer = this.steps.length * 60;
 
-
     changeStep(step) {
         if(step == "team" || step == "skintone") {
             this.stepLevel = "figure";
-        } else if (step == "packaging") {
+        }
+        else if (step == "packaging") {
             this.stepLevel = "packaging";
         } else {
             this.stepLevel = "features"
@@ -159,18 +159,15 @@ export class AppComponent {
         this.activeStep = step;
     }
 
-
     toggleStepLevel(stepLevel) {
         switch(stepLevel) {
             case 'figure':
                 return this.stepLevel = 'features';
-                
             case 'features':
                 return this.stepLevel = 'figure';
         }
     }
     
-
     updateFigure(key,val) {
         this._store.dispatch({type: 'UPDATE_FIGURE',payload:[key,val] })
     }
@@ -178,76 +175,5 @@ export class AppComponent {
     updateFace(key,val) {
         this._store.dispatch({type: 'UPDATE_FACE',payload:[key,val] })
     }
-
-    // changeNose(nose) {
-    //     this.activeNose = nose;
-    //     window.localStorage.setItem('nose',nose);
-    // }
-
-    // changeEyebrow(eyebrow) {
-    //     this.activeEyebrows = eyebrow;
-    //     window.localStorage.setItem('eyebrows', eyebrow);
-    // }
-
-    // changeEyebrowColor(color) {
-    //     this.activeEyebrowColor = color;
-    //     window.localStorage.setItem('eyebrowColor',color);
-    // }
-
-    // changeHairStyle(hairStyle) {
-    //     this.activeHairStyle = hairStyle;
-    //     window.localStorage.setItem('hairStyle',hairStyle);
-    // }
-
-    // changeHairColor(color) {
-    //     this.activeHairColor = color;
-    //     window.localStorage.setItem('hairColor',color);
-    // }
-
-    // changeMouthAccessory(accessory) {
-    //     this.activeMouthAccessory = accessory;
-    //     window.localStorage.setItem('mouthAccessory',accessory);
-    // }
-
-    // changeBeard(beard) {
-    //     this.activeBeard = beard;
-    //     window.localStorage.setItem('beard',beard);
-    // }
-
-    // changeBeardColor(color) {
-    //     this.activeBeardColor = color;
-    //     window.localStorage.setItem('beardColor',color);
-    // }
-
-    // changeEyes(eyes) {
-    //     this.activeEyes = eyes;
-    //     window.localStorage.setItem('eyes',eyes);
-    // }
-
-    // changeNoseAccessory(acc) {
-    //     this.activeNoseAccessory = acc;
-    //     window.localStorage.setItem('noseAccessory',acc);
-    // }
-
-
-    // changeEyeAccessory(acc) {
-    //     this.activeEyeAccessory = acc;
-    //     window.localStorage.setItem('eyeAccessory',acc);
-    // }
-
-    // changePackage(packaging) {
-    //     this.activePackage = packaging;
-    //     window.localStorage.setItem('package', packaging);
-    // }
-
-    // updatePrimaryText(text) {
-    //     this.activePrimaryText = text;
-    //     window.localStorage.setItem('primaryText', text);
-    // }
-
-    // updateSecondaryText(text) {
-    //     this.activeSecondaryText = text;
-    //     window.localStorage.setItem('secondaryText', text);
-    // }
 
 }

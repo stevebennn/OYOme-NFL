@@ -48,7 +48,6 @@
                         beardColor="{{ product.face.beardColor }}"></app-figure-feature-view>
                 </div>
 
-
             </section>
 
         </div>
@@ -233,7 +232,7 @@
                     <button
                     class="bottom-bar-item mouth btn btn-shadow"
                     *ngFor="let mouth of mouthOpts"
-                    (click)="changeMouth(mouth)"
+                    (click)="updateFace('mouth',mouth)"
                     [ngStyle]="{'background-image': 'url(assets/img/mouths/mouth_' + mouth + '.svg)' }"
                     [class.active]="activeMouth == mouth"></button>
                 </div>            
