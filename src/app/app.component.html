@@ -164,7 +164,7 @@
                     *ngFor="let team of teamOpts"
                     (click)="updateFigure('team',team.name)"
                     [ngStyle]="{'background-image': 'url(assets/img/logos/' + team.name + '.png)' }"
-                    [class.active]="activeTeam == team.name"
+                    [class.active]="product.team == team.name"
                     ></button>
                 </div>
             </div>
