@@ -11,7 +11,7 @@ export const productModel = {
             noseAccessory: '002',
             mouth: '007',
             mouthAccessory: '002',
-            beard: '007',
+            beard: '000',
             beardColor: '4625'
         },
         fullname: 'Your Name',
