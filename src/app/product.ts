@@ -15,7 +15,7 @@ export const product = ( state = _productModel, action ) => {
 
         // updates facial features of the product state
         case "UPDATE_FACE":
-            return { 
+            return {
                 ...state, // spreads the current state object
                 ['face']: { // selects the face key
                     ...state['face'], // spreads the current face object
