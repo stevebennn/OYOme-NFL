@@ -56,14 +56,12 @@ export class AppComponent {
             });
         });
 
-
         // team options
         teamsMql.addListener((teamsMql: MediaQueryList) => {
             zone.run( () => { 
                 this.teamsPosition= teamsMql.matches ? 'center' : 'flex-start';
             });
         });
-
 
         // skintone options
         skintoneMql.addListener((skinetoneMql: MediaQueryList) => {
@@ -78,7 +76,6 @@ export class AppComponent {
                 this.eyesPosition= eyesMql.matches ? 'center' : 'flex-start';
             });
         });
-        
 
         // eyebrows options
         eyebrowsMql.addListener((eyebrowsMql: MediaQueryList) => {
@@ -87,14 +84,12 @@ export class AppComponent {
             });
         });
 
-
         // nose options
         nosesMql.addListener((nosesMql: MediaQueryList) => {
             zone.run( () => { 
                 this.nosesPosition= nosesMql.matches ? 'center' : 'flex-start';
             });
         });
-
 
         // mouth options
         mouthsMql.addListener((mouthsMql: MediaQueryList) => {
@@ -110,8 +105,10 @@ export class AppComponent {
             });
         });
 
+        // subscribing to the product reducer
         this._store.select('product')
             .subscribe(product => {
+                // assigning it to the local product variable
                 this.product = product;
             });
     }
@@ -122,7 +119,6 @@ export class AppComponent {
 
     steps = this.stepsService.steps;
     opts = this.stepsService.opts;
-
     noseOpts = this.opts.noses;
     noseContainer = this.noseOpts.length * 60;
     mouthOpts = this.opts.mouths;
@@ -159,6 +155,8 @@ export class AppComponent {
         this.activeStep = step;
     }
 
+    // toggles the current step level. This creates a basic
+    // "zoom in & zoom out" functionality
     toggleStepLevel(stepLevel) {
         switch(stepLevel) {
             case 'figure':
