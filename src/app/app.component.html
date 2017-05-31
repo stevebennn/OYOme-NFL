@@ -70,7 +70,7 @@
                     *ngFor="let acc of eyeAccessoriesOpts"
                     (click)="updateFace('eyeAccessory',acc)"
                     [class.active]="product.face.eyeAccessory == acc "
-                    [ngStyle]="{'background-image': 'url(assets/img/eyes/acc_' + acc + '.svg)' }">
+                    [ngStyle]="{'background-image': 'url(//s3.us-east-2.amazonaws.com/oyome/eyes/acc_' + acc + '.svg)' }">
                     </button>
             </div>
 
@@ -95,7 +95,7 @@
                     *ngFor="let opts of noseAccessoryOpts"
                     (click)="updateFace('noseAccessory',opts)"
                     [class.active]="product.face.noseAccessory == opts "
-                    [ngStyle]="{'background-image': 'url(assets/img/noses/acc_' + opts + '.svg)' }">
+                    [ngStyle]="{'background-image': 'url(//s3.us-east-2.amazonaws.com/oyome/noses/acc_' + opts + '.svg)' }">
                     </button>
             </div>
 
@@ -107,7 +107,7 @@
                     *ngFor="let opts of mouthAccessoriesOpts"
                     (click)="updateFace('mouthAccessory',opts)"
                     [class.active]="product.face.mouthAccessory == opts "
-                    [ngStyle]="{'background-image': 'url(assets/img/mouths/acc_' + opts + '.svg)' }">
+                    [ngStyle]="{'background-image': 'url(//s3.us-east-2.amazonaws.com/oyome/mouths/acc_' + opts + '.svg)' }">
                     </button>
             </div>
 
@@ -160,7 +160,7 @@
                     class="bottom-bar-item logo btn btn-shadow"
                     *ngFor="let team of teamOpts"
                     (click)="updateFigure('team',team.name)"
-                    [ngStyle]="{'background-image': 'url(assets/img/logos/' + team.name + '.png)' }"
+                    [ngStyle]="{'background-image': 'url(//s3.us-east-2.amazonaws.com/oyome/logos/' + team.name + '.png)' }"
                     [class.active]="product.team == team.name"
                     ></button>
                 </div>
@@ -178,7 +178,7 @@
                     class="bottom-bar-item eyes btn btn-shadow"
                     *ngFor="let eye of eyesOpts"
                     (click)="updateFace('eyes',eye)"
-                    [ngStyle]="{'background-image': 'url(assets/img/eyes/eyes_' + eye + '.svg)' }"
+                    [ngStyle]="{'background-image': 'url(//s3.us-east-2.amazonaws.com/oyome/eyes/eyes_' + eye + '.svg)' }"
                     [class.active]="product.face.eyes == eye"></button>              
                 </div>
             </div>
@@ -195,7 +195,7 @@
                     class="bottom-bar-item eyebrows btn btn-shadow"
                     *ngFor="let eyebrow of eyebrowOpts"
                     (click)="updateFace('eyebrows',eyebrow)"
-                    [ngStyle]="{'background-image': 'url(assets/img/eyebrows/eyebrows_' + eyebrow + '_blk.svg)' }"
+                    [ngStyle]="{'background-image': 'url(//s3.us-east-2.amazonaws.com/oyome/eyebrows/eyebrows_' + eyebrow + '_blk.svg)' }"
                     [class.active]="product.face.eyebrows == eyebrow"></button>              
                 </div>
             </div>
@@ -212,7 +212,7 @@
                     class="bottom-bar-item nose btn btn-shadow"
                     *ngFor="let nose of noseOpts"
                     (click)="updateFace('nose',nose)"
-                    [ngStyle]="{'background-image': 'url(assets/img/noses/nose_' + nose + '.svg)' }"
+                    [ngStyle]="{'background-image': 'url(//s3.us-east-2.amazonaws.com/oyome/noses/nose_' + nose + '.svg)' }"
                     [class.active]="product.face.nose == nose"></button>
                 </div>
             </div>
@@ -230,7 +230,7 @@
                     class="bottom-bar-item mouth btn btn-shadow"
                     *ngFor="let mouth of mouthOpts"
                     (click)="updateFace('mouth',mouth)"
-                    [ngStyle]="{'background-image': 'url(assets/img/mouths/mouth_' + mouth + '.svg)' }"
+                    [ngStyle]="{'background-image': 'url(//s3.us-east-2.amazonaws.com/oyome/mouths/mouth_' + mouth + '.svg)' }"
                     [class.active]="product.face.mouth == mouth"></button>
                 </div>            
             </div>
@@ -246,7 +246,7 @@
                     class="bottom-bar-item beards btn btn-shadow"
                     *ngFor="let beard of beardOpts"
                     (click)="updateFace('beard',beard)"
-                    [ngStyle]="{'background-image': 'url(assets/img/beards/beard_' + beard + '_blk.svg)' }"
+                    [ngStyle]="{'background-image': 'url(//s3.us-east-2.amazonaws.com/oyome/beards/beard_' + beard + '_blk.svg)' }"
                     [class.active]="product.face.beard == beard"></button>
                 </div>
             </div>
