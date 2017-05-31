@@ -252,7 +252,6 @@
             </div>
         
         </section>
-
     <!-- BOTTOM NAVIGATION BAR -->
     <section>
         <div class="bottom-bar"
@@ -266,7 +265,10 @@
                  class="bottom-bar-step btn"
                  (click)="changeStep(step.name)"
                  [class.active]="activeStep == step.name ">
-                    <img src="//s3.us-east-2.amazonaws.com/oyome/{{step.name}}.svg" alt="">
+                    <!--<img src="//s3.us-east-2.amazonaws.com/oyome/{{step.name}}.svg" alt="">-->
+                    <svg  width="55" height="55" fill="transparent">
+                        <use attr.xlink:href="assets/img/bottom_bar.svg#{{ step.name }}"></use>
+                    </svg>
                  </button>
             </div>
         </div>
