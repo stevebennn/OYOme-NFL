@@ -1,4 +1,4 @@
-import { Store, Action, ActionReducer, combineReducers } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { productModel } from './product.model';
 
 const _productModel = productModel;
