@@ -1,5 +1,4 @@
 export const productModel = {
-
         team: 'nflari',
         skintone: '002',
         face: {
@@ -7,7 +6,7 @@ export const productModel = {
             eyeAccessory: '005',
             eyebrows: '001',
             eyebrowColor: '4625',
-            nose: '007',
+            nose: '006',
             noseAccessory: '002',
             mouth: '007',
             mouthAccessory: '002',
