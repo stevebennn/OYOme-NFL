@@ -21,9 +21,6 @@ $bottom-option-bar-bg: #E5E5E5;
 
 $bottom-option-bar-height: 80px;
 
-
-
-
 .hidden { display: none !important; }
 
 .side-bar-item.active {
@@ -56,7 +53,6 @@ $bottom-option-bar-height: 80px;
      }
 }
 
-
 // Globals
 body {
     background-position: center;
@@ -67,15 +63,12 @@ body {
     height: 100%;
 }
 
-
 html {
     -overflow-style: autohiding-scrollbar;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -moz-overflow-style: -moz-autohiding-scrollbar;
     -webkit-overflow-style: -webkit-autohiding-scrollbar;
 }
-
-
 
 // this will the the app-root element when
 // in angular...not a class name
@@ -95,14 +88,12 @@ app-root {
   height: 100%;
 }
 
-
 .container {
     display: flex;
     width: 100%;
     position: relative;
     max-width: 1200px;
 }
-
 
 .top-bar {
     position: absolute;
@@ -112,7 +103,6 @@ app-root {
     z-index: 10;
 }
 
-
 .top-bar-wrapper {
     display: flex;
     justify-content: space-between;
@@ -120,7 +110,6 @@ app-root {
     max-width: 960px;
     margin: 0 auto;
 }
-
 
 .logo {
     display: inline-block;
@@ -132,14 +121,12 @@ app-root {
     background-position: center;
 }
 
-
 .app-container {
     position: relative;
     display: flex;
     width: 100%;
     height: 100vh;
 }
-
 
 .bottom-bar {
     position: absolute;
@@ -233,6 +220,7 @@ app-root {
     outline: none;
     transform-origin: center;
 }
+
 .bottom-option-bar {
     position: absolute;
     display: flex;
@@ -272,7 +260,6 @@ app-root {
       }
 }
 
-
 .side-option-bar {
     position: absolute;
     display: flex;
@@ -281,7 +268,6 @@ app-root {
     height: calc(100% - 213px);
     background: $side-option-bar-bg;
 }
-
 
 .side-option-inner-scroll,
 .side-secondary-options {
@@ -324,7 +310,6 @@ app-root {
     }
 }
 
-
 .side-bar-item {
     position: relative;
     display: inline-block;
@@ -357,7 +342,6 @@ app-root {
     width: 100%;
 }
 
-
 .content-wrapper {
     position: absolute;
     display: flex;
@@ -370,7 +354,6 @@ app-root {
     background-position: center;
     background-repeat: no-repeat;
 }
-
 
 // container for the pkg image
 .packaging {
@@ -395,7 +378,6 @@ app-root {
 
 .pkg { max-height: 550px; }
 
-
 .packaging > .figure {
     width: 54%;
     height: 74%;
@@ -407,7 +389,6 @@ app-figure {
     width: 100%;
     height: 100%;
 }
-
 
 .figure {
     position: absolute;
