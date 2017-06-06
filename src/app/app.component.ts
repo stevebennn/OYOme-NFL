@@ -4,6 +4,8 @@ import { StepsService } from './steps.service';
 
 import {Store,provideStore} from '@ngrx/store';
 
+import { saveState } from './localstorage';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -111,6 +113,10 @@ export class AppComponent {
                 // assigning it to the local product variable
                 this.product = product;
             });
+        this._store.select('product')
+            .subscribe( () => {
+                saveState(this.product);
+            } )
     }
 
     // Application default values

@@ -1,7 +1,9 @@
 import { Store } from '@ngrx/store';
 import { productModel } from './product.model';
+import { loadState } from './localstorage';
 
-const _productModel = productModel;
+const persistedState = loadState();
+const _productModel = (persistedState === undefined) ? productModel: persistedState;
 
 export const product = ( state = _productModel, action ) => {
         switch(action.type) {
