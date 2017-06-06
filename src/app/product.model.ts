@@ -14,6 +14,7 @@ export const productModel = {
             beardColor: '4625'
         },
         fullname: 'Your Name',
+        message: 'Your Message!',
         gender: 'male',
         handedness: 'right',
         league: 'MLB',

@@ -270,6 +270,28 @@
                     [class.active]="product.face.beard == beard"></button>
                 </div>
             </div>
+
+            <div
+            class="bottom-option-bar"
+            [class.hidden]="activeStep !== 'packaging' ">
+                <div
+                class="bottom-option-bar-inner">
+                    <div>
+                        <label for="name">Your Name</label>
+                        <input type="text" name="primary"  #fullname (keyup)="updateFigure('fullname',fullname.value)">
+                    </div>
+                    <div>
+                        <label for="message">Your Message</label>
+                        <input type="text" name="message" #message (keyup)="updateFigure('message',message.value)">
+                    </div>
+                    <div>
+                        <label for="position">Position</label>
+                        <select name="position" id="">
+                            <option value="qb">qb</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         
         </section>
     <!-- BOTTOM NAVIGATION BAR -->
