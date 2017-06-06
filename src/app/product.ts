@@ -2,7 +2,11 @@ import { Store } from '@ngrx/store';
 import { productModel } from './product.model';
 import { loadState } from './localstorage';
 
+// loads state from localstorage
 const persistedState = loadState();
+
+// if localstorage does not contain the state. then use the default product model.
+// else use the model from localstorage :)
 const _productModel = (persistedState === undefined) ? productModel: persistedState;
 
 export const product = ( state = _productModel, action ) => {

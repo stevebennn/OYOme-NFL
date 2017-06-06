@@ -356,19 +356,19 @@ app-root {
 }
 
 // container for the pkg image
-.packaging {
-    display: none;
-    @media screen and ( min-width: 750px ) {
-        position: absolute;
-        display: flex;
-        height: calc(100% - 30px);
-        top: 15px;
-        width: 50%;
-        right: 100px;
-        z-index: -1;
-    }
-    @media screen and (min-height: 600px) { right: 60px; }
-}
+// .packaging {
+//     display: none;
+//     @media screen and ( min-width: 750px ) {
+//         position: absolute;
+//         display: flex;
+//         height: calc(100% - 30px);
+//         top: 15px;
+//         width: 50%;
+//         right: 100px;
+//         z-index: -1;
+//     }
+//     @media screen and (min-height: 600px) { right: 60px; }
+// }
 
 // the image of the packaging
 .pkg {
@@ -385,12 +385,14 @@ app-root {
     left: 25%;
 }
 
-app-figure {
+app-figure,
+app-packaging {
     width: 100%;
     height: 100%;
 }
 
-.figure {
+.figure,
+.packaging {
     position: absolute;
     max-height: 600px;
     bottom:0;

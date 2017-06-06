@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 // custom application components
 import { FigureComponent } from './figure/figure.component';
 import { FigureFeatureViewComponent } from './figure-feature-view/figure-feature-view.component';
-
+import { PackagingComponent } from './packaging/packaging.component';
 // service to provide steps and available options
 import { StepsService } from './steps.service';
 
@@ -24,7 +24,8 @@ import { product } from './product';
   declarations: [
     AppComponent,
     FigureComponent,
-    FigureFeatureViewComponent
+    FigureFeatureViewComponent,
+    PackagingComponent
   ],
   imports: [
     BrowserModule,

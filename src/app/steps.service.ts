@@ -13,15 +13,15 @@ export class StepsService {
         { name: "noses"},
         { name: "mouths"},
         { name: "beards"},
-        // { name: "packaging"}
+        { name: "packaging"}
     ]
 
     opts = {
         "teams": [
             {name: "nflari"},
-            {name: "nflatl"},
-            {name: "nflbal"},
-            {name: "nflcle"}
+            // {name: "nflatl"},
+            // {name: "nflbal"},
+            // {name: "nflcle"}
         ],
         "noses": [
             "001","002","003","004","005","006","007"

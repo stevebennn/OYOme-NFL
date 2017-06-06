@@ -14,6 +14,8 @@
             <section class="figure">
 
                 <div [class.hidden]="stepLevel !== 'figure' ">
+
+
                     <app-figure
                         skintone="{{product.skintone}}"
                         team="{{ product.team }}"
@@ -46,6 +48,24 @@
                         beard="{{ product.face.beard }}"
                         beardColor="{{ product.face.beardColor }}"></app-figure-feature-view>
                 </div>
+
+            <div [class.hidden]="stepLevel !== 'packaging' ">
+                <app-packaging
+                        skintone="{{product.skintone}}"
+                        team="{{ product.team }}"
+                        eyes="{{ product.face.eyes }}"
+                        eyeAccessory="{{ product.face.eyeAccessory }}"
+                        eyebrows="{{ product.face.eyebrows }}"
+                        eyebrowColor="{{ product.face.eyebrowColor }}"
+                        nose="{{ product.face.nose }}"
+                        jerseyNumber="{{ product.number }}"
+                        noseAccessory="{{ product.face.noseAccessory }}"
+                        mouth="{{ product.face.mouth }}"
+                        mouthAccessory="{{ product.face.mouthAccessory }}"
+                        beard="{{ product.face.beard }}"
+                        beardColor="{{ product.face.beardColor }}"></app-packaging>
+            </div>
+
             </section>
 
         </div>
