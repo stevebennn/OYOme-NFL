@@ -11,14 +11,12 @@ const _productModel = (persistedState === undefined) ? productModel: persistedSt
 
 export const product = ( state = _productModel, action ) => {
         switch(action.type) {
-
         // updates figure features of the product state
         case "UPDATE_FIGURE":
             return {
                 ...state, // spreads the current state object
                 [action.payload[0]]: action.payload[1] // replaces the key - val pair
             };
-
         // updates facial features of the product state
         case "UPDATE_FACE":
             return {
@@ -28,14 +26,11 @@ export const product = ( state = _productModel, action ) => {
                     [action.payload[0]]: action.payload[1] // replaces the key - val pair 
                 }
             }
-        
         // resets the state to the initial productModel
         case "RESET":
             return productModel
-
         // if the case doesnt match... return the current state
         default: 
             return state;
-
     }
 }

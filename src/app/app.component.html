@@ -63,7 +63,10 @@
                         mouth="{{ product.face.mouth }}"
                         mouthAccessory="{{ product.face.mouthAccessory }}"
                         beard="{{ product.face.beard }}"
-                        beardColor="{{ product.face.beardColor }}"></app-packaging>
+                        beardColor="{{ product.face.beardColor }}"
+                        fullname="{{ product.fullname }}"
+                        message="{{ product.message }}"
+                        position="{{ product.position }}"></app-packaging>
             </div>
 
             </section>
@@ -278,17 +281,20 @@
                 class="bottom-option-bar-inner">
                     <div>
                         <label for="name">Your Name</label>
-                        <input type="text" name="primary"  #fullname (keyup)="updateFigure('fullname',fullname.value)">
+                        <input type="text" name="primary"  #fullname maxlength="24" (keyup)="updateFigure('fullname',fullname.value)">
                     </div>
                     <div>
                         <label for="message">Your Message</label>
-                        <input type="text" name="message" #message (keyup)="updateFigure('message',message.value)">
+                        <input type="text" name="message" placeholder="{{ (product.message)? product.message: 'Your Message' }}" #message maxlength="20" (keyup)="updateFigure('message',message.value)">
                     </div>
                     <div>
                         <label for="position">Position</label>
-                        <select name="position" id="">
+                        <select #position (change)="updateFigure('position',position.value)">
                             <option value="qb">qb</option>
+                            <option value="rb">rb</option>
+                            <option value="wr">wr</option>
                         </select>
+                        <span>{{ product.position }}</span>
                     </div>
                 </div>
             </div>

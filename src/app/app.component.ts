@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { StepsService } from './steps.service';
 
 import {Store,provideStore} from '@ngrx/store';
-
 import { saveState } from './localstorage';
 
 @Component({
@@ -185,5 +184,6 @@ export class AppComponent {
         this.activeStep = 'team';
         this.stepLevel = 'figure';
     }
+
 
 }

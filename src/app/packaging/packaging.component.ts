@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FigureComponent } from '../figure/figure.component';
 
 @Component({
@@ -12,5 +12,9 @@ export class PackagingComponent extends FigureComponent {
 
   ngOnInit() {
   }
+
+  @Input() fullname;
+  @Input() message;
+  @Input() position;
 
 }
