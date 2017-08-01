@@ -183,7 +183,7 @@
                     class="bottom-bar-item logo btn btn-shadow"
                     *ngFor="let team of teamOpts"
                     (click)="updateFigure('team',team.name)"
-                    [ngStyle]="{'background-image': 'url(//s3.us-east-2.amazonaws.com/oyome/logos/' + team.name + '.png)' }"
+                    [ngStyle]="{'background-image': 'url(//s3.us-east-2.amazonaws.com/oyome/logos/nfl' + team.name + '.png)' }"
                     [class.active]="product.team == team.name"
                     ></button>
                 </div>

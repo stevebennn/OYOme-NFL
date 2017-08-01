@@ -18,10 +18,35 @@ export class StepsService {
 
     opts = {
         "teams": [
-            {name: "nflari"},
-            // {name: "nflatl"},
-            // {name: "nflbal"},
-            // {name: "nflcle"}
+            {name: "ari"},
+            {name: "atl"},
+            {name:"bal"},
+            {name:"car"},
+            {name:"chi"},
+            {name:"cin"},
+            {name:"cle"},
+            {name:"dal"},
+            {name:"den"},
+            {name:"det"},
+            {name:"gbp"},
+            {name:"hou"},
+            {name:"ind"},
+            {name:"jac"},
+            {name:"lac"},
+            {name:"mia"},
+            {name:"min"},
+            {name:"nep"},
+            {name:"nos"},
+            {name:"nyg"},
+            {name:"nyj"},
+            {name:"oak"},
+            {name:"phi"},
+            {name:"pit"},
+            {name:"san"},
+            {name:"sea"},
+            {name:"tbb"},
+            {name:"ten"},
+            {name:"was"}
         ],
         "noses": [
             "001","002","003","004","005","006","007"
@@ -62,7 +87,7 @@ export class StepsService {
             {name: "002",hex:"#daa268"},
             {name: "003",hex:"#815120"}
         ],
-        "eyes": ["001","002","003","004","005"],
+        "eyes": ["001","002","003","004","005","006"],
         "eye_accessories": ["000","001","002","003","004","005"],
         "eyebrows": ["001","002","003","004","005","006","007","008","009","010","011"],
         "hairstyles": ["null","spikey","ponytail"],
