@@ -26,6 +26,3 @@ git commit -m 'updates. pushing to master'
 # push changes the the product master branch
 git push
 
-# ssh into the prod server
-ssh root@107.170.79.219
-
